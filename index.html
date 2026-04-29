@@ -1,67 +1,182 @@
 ---
 layout: default
+nav_id: home
+---
+<div id="page-root"></div>
+<script type="module" src="{{ "/assets/js/page-home.js" | relative_url }}"></script>
+---
+layout: default
+nav_id: home
+---
+<div id="page-root"></div>
+<script type="module" src="{{ "/assets/js/page-home.js" | relative_url }}"></script>
+layout: default
 ---
 
-<div class="header-container jumbotron">
+<section id="home" class="agb-hero">
     <div class="container">
-        <h1>Open Graph Benchmark</h1>
-        <p><strong>Benchmark datasets, data loaders and evaluators for graph machine learning<strong></p>
-        <p><a class="btn btn-primary btn-lg" href="{{ "/docs/home/" | relative_url }}" role="button">Get Started</a> <a class="btn btn-warning btn-lg" href="{{ "/docs/lsc/" | relative_url }}" role="button">OGB-LSC</a> </p>  
-        <!-- <a class="btn btn-warning btn-lg" href="{{ "/docs/lsc/" | relative_url }}" role="button">Large-Scale Challenge</a> -->
+        <p class="agb-kicker">Research Project Website</p>
+        <h1>Adversarial Graph Benchmark (AGB)</h1>
+        <p class="agb-subtitle">Evaluating GNN Robustness via Topology-Aware Adversarial Attacks</p>
+        <p class="agb-lead">
+            AGB presents GOttack, a universal adversarial framework for graph neural networks that leverages orbit-aware
+            topology signals to discover high-impact perturbation candidates. The benchmark studies how graph structure governs
+            robustness under constrained edge manipulations.
+        </p>
+        <a class="btn btn-primary btn-lg" href="#method">Explore Method</a>
     </div>
-</div>
+</section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <p class="lead">
-                <font size="5">
-                The Open Graph Benchmark (OGB) is a collection of realistic, large-scale, and diverse benchmark datasets for machine learning on graphs. 
-                OGB datasets are automatically downloaded, processed, and split using the <a href="{{ "/docs/home/#dataloader" | relative_url }}">OGB Data Loader</a>. The model performance can be evaluated using the <a href="{{ "/docs/home/#evaluator" | relative_url }}">OGB Evaluator</a> in a unified manner. <br/>
-                OGB is a community-driven initiative in active development. We expect the benchmark datasets to evolve. To keep up to date to major updates, <b>subscribe to our google group <a href="https://groups.google.com/forum/#!forum/open-graph-benchmark">here</a></b>. 
-                </font>
-            </p>
-        </div>
-        <div class="col-md-6 text-center">
-            <img src="{{ "/assets/img/OGB.png" | relative_url }}" alt="Jekyll logo" class="img-responsive">
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col-sm-4">
-            <h1 class="text-center"><a href="{{ "/docs/dataset_overview/" | relative_url }}"><i class="fa fa-database" aria-hidden="true"></i></a></h1>
-            <h3 class="text-center"><a href="{{ "/docs/dataset_overview/" | relative_url }}">Realistic datasets</a></h3>
-            <p class="f3-light">OGB provides a diverse set of challenging and realistic <a href="{{ "/docs/dataset_overview/" | relative_url }}">benchmark datasets</a> that are of varying sizes and cover a variety graph machine learning tasks, including prediction of <a href="{{ "/docs/nodeprop/" | relative_url }}">node, </a><a href="{{ "/docs/linkprop/" | relative_url }}"> link, </a> and <a href="{{ "/docs/graphprop/" | relative_url }}">graph</a> properties.
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><a href="{{ "/docs/home/#dataloader" | relative_url }}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h1>
-            <h3 class="text-center"><a href="{{ "/docs/home/#dataloader" | relative_url }}">Flexible data loaders</a></h3>
-            <p class="f3-light">OGB fully automates dataset processing.
-                The OGB data loaders automatically download and process graphs, provide graph objects that are fully compatible with <a href="https://pytorch-geometric.readthedocs.io/">Pytorch Geometric</a> and <a href="https://www.dgl.ai/">DGL</a>.
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center"><a href="{{ "/docs/home/#evaluator" | relative_url }}"><i class="fa fa-bar-chart" aria-hidden="true"></i></a></h1>
-            <h3 class="text-center"><a href="{{ "/docs/home/#evaluator" | relative_url }}">Unified evaluation</a></h3>
-            <p class="f3-light">OGB provides standardized dataset splits and evaluators that allow for easy and reliable comparison of different models in a unified manner. OGB uses <a href="{{ "/docs/leader_overview/" | relative_url }}">leaderboards</a> to keep track of the state-of-the-art.
-            </p>
+<section class="agb-section" id="motivation">
+    <div class="container">
+        <h2>Motivation</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Graph Neural Networks</h3>
+                    <p>GNNs aggregate node attributes and neighborhood structure to perform relational tasks such as node classification.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Adversarial Vulnerability</h3>
+                    <p>Even sparse edge perturbations can alter message passing trajectories and produce severe prediction drift.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Role of Topology</h3>
+                    <p>Structural roles determine attack sensitivity, making topology-aware perturbation design essential for robust evaluation.</p>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <hr>
-
-    <div class="col-md-12 text-center">
-        <a href="{{ site.paper_address }}">
-        <img src="{{ "/assets/img/paper_download.png" | relative_url }}" alt="Jekyll logo" class="img-responsive">
-        </a>
+<section class="agb-section agb-section-alt" id="method">
+    <div class="container">
+        <h2>Methodology</h2>
+        <div class="agb-panel">
+            <p><strong>Graph definition.</strong> We model each graph as <code>G = (V, E, X)</code>, with nodes <code>V</code>, edges <code>E</code>, and node features <code>X</code>.</p>
+            <p><strong>Node classification setup.</strong> An attacker modifies graph structure through limited edge insertions and deletions to induce target misclassification.</p>
+            <p><strong>Structural attack context.</strong> The candidate search is combinatorial; prioritization in topological space is the key design decision.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="agb-card">
+                    <h3>GOttack</h3>
+                    <ul>
+                        <li>Orbit-based node grouping captures local structural roles.</li>
+                        <li>A 73-dimensional Graph Orbit Vector enables topology-aware ranking.</li>
+                        <li>Orbit 15 and orbit 18 are emphasized as high-impact regions.</li>
+                        <li>Periphery nodes are shown to drive substantial misclassification.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="agb-card">
+                    <h3>Core Hypothesis</h3>
+                    <p>Orbit-informed perturbation selection improves universal attack strength while preserving sparse, efficient edits.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <p style="color:#FFFFFF">a</p>
-    <div class="col-md-12 text-center">
-        <a href="https://arxiv.org/abs/2103.09430">
-        <img src="{{ "/assets/img/paper_download_lsc.png" | relative_url }}" alt="Jekyll logo" class="img-responsive">
-        </a>
+<section class="agb-section" id="pipeline">
+    <div class="container">
+        <h2>Pipeline</h2>
+        <div class="agb-flow">
+            <div class="agb-flow-step">Graph</div>
+            <div class="agb-flow-arrow">&#8594;</div>
+            <div class="agb-flow-step">Orbit Detection</div>
+            <div class="agb-flow-arrow">&#8594;</div>
+            <div class="agb-flow-step">Candidate Selection</div>
+            <div class="agb-flow-arrow">&#8594;</div>
+            <div class="agb-flow-step">Edge Perturbation</div>
+            <div class="agb-flow-arrow">&#8594;</div>
+            <div class="agb-flow-step">Misclassification</div>
+        </div>
     </div>
+</section>
+
+<section class="agb-section agb-section-alt" id="results">
+    <div class="container">
+        <h2>Results</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Attack Strength</h3>
+                    <p>GOttack achieves higher misclassification performance across evaluated tasks.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Model Coverage</h3>
+                    <p>The method remains effective across GCN, GIN, and GraphSAGE.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="agb-card">
+                    <h3>Efficiency</h3>
+                    <p>Runtime is approximately 85% of competing attack methods while preserving stronger outcomes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="agb-panel">
+            <h3>Evaluation Datasets</h3>
+            <div class="agb-tag-list">
+                <span class="agb-tag">Cora</span>
+                <span class="agb-tag">Citeseer</span>
+                <span class="agb-tag">Pubmed</span>
+                <span class="agb-tag">BlogCatalog</span>
+                <span class="agb-tag">Polblogs</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="agb-section" id="comparison">
+    <div class="container">
+        <h2>Comparison</h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="agb-card">
+                    <h3>Nettack</h3>
+                    <p>Strong baseline with targeted perturbations, but limited topology-role awareness.</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="agb-card">
+                    <h3>FGA</h3>
+                    <p>Gradient-guided adversarial edits with effective local search.</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="agb-card">
+                    <h3>SGA</h3>
+                    <p>Scalable perturbation strategy balancing cost and attack utility.</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="agb-card agb-card-highlight">
+                    <h3>GOttack</h3>
+                    <p>Best overall attack quality and efficiency through orbit-aware selection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="agb-section agb-section-alt" id="insights">
+    <div class="container">
+        <h2>Insights</h2>
+        <div class="agb-panel">
+            <ul>
+                <li>Orbit-based attacks are highly effective under constrained perturbation budgets.</li>
+                <li>Orbits 15 and 18 identify structurally critical nodes for attack planning.</li>
+                <li>Graph topology is a major factor in practical GNN robustness.</li>
+            </ul>
+        </div>
+    </div>
+</section>

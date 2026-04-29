@@ -1,89 +1,24 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top agb-nav">
     <div class="container navbar-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">
-                <span><img src="{{ "/assets/img/OGB_pure.png" | relative_url }}" alt="Logo"></span> {{ }}
-            </a>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ "/" | relative_url }}">AGB</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                <li {% if page.sectionid=='Get Started' %} class="active" {% endif %}><a href="{{ "/docs/home/" | relative_url }}">Get Started</a></li>
-                <li {% if page.sectionid=='Updates' %} class="active" {% endif %}><a href="{{ "/docs/update/" | relative_url }}">Updates</a></li>
-                <li {% if page.sectionid=='Large-Scale Challenge' %} class="dropdown" {% endif %}><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Large-Scale Challenge <span class="caret"></span>
-                </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="{{ "/docs/lsc/" | relative_url }}">Overview</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/mag240m/" | relative_url }}">MAG240M</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/wikikg90mv2/" | relative_url }}">WikiKG90Mv2</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/pcqm4mv2/" | relative_url }}">PCQM4Mv2</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/rules/" | relative_url }}">Rules</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/leaderboards/" | relative_url }}">Leaderboards</a></li>
-                      <li class="divider"></li>
-                      <li><a href="https://arxiv.org/abs/2103.09430">LSC Paper</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/neurips2022/" | relative_url }}">2nd LSC@NeurIPS 2022</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/kddcup2021/" | relative_url }}">1st LSC@KDD Cup 2021 (archive)</a></li>
-                    </ul>
-                </li>
-                <li {% if page.sectionid=='Datasets' %} class="dropdown" {% endif %}><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Datasets <span class="caret"></span>
-                </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="{{ "/docs/dataset_overview/" | relative_url }}">Overview</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/nodeprop/" | relative_url }}">Node Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/linkprop/" | relative_url }}">Link Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/graphprop/" | relative_url }}">Graph Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/" | relative_url }}">Large-Scale Challenge</a></li>
-                    </ul>
-                </li>
-                <li {% if page.sectionid=='Leaderboard' %} class="dropdown" {% endif %}><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Leaderboards <span class="caret"></span>
-                </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="{{ "/docs/leader_overview/" | relative_url }}">Overview</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/leader_rules/" | relative_url }}">Rules</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/leader_nodeprop/" | relative_url }}">Node Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/leader_linkprop/" | relative_url }}">Link Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/leader_graphprop/" | relative_url }}">Graph Property Prediction</a></li>
-                      <li class="divider"></li>
-                      <li><a href="{{ "/docs/lsc/leaderboards/" | relative_url }}">Large-Scale Challenge</a></li>
-                    </ul>
-                </li>
-                <li {% if page.sectionid=='Papers' %} class="dropdown" {% endif %}><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Papers <span class="caret"></span>
-                </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="https://arxiv.org/abs/2005.00687">OGB paper</a></li>
-                      <li class="divider"></li>
-                      <li><a href="https://arxiv.org/abs/2103.09430">OGB-LSC paper</a></li>
-                    </ul>
-                </li>
-                {% comment %} <li {% if page.sectionid=='Paper' %} class="active" {% endif %}><a href="{{ site.paper_address }}">Paper</a></li> {% endcomment %}
-                <li {% if page.sectionid=='Team' %} class="active" {% endif %}><a href="{{ "/docs/team/" | relative_url }}">Team</a></li>
-                <li {% if page.sectionid=='Github' %} class="active" {% endif %}><a href="{{ site.git_address }}">Github</a></li>
-            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{% if page.nav_id == 'home' %}active{% endif %}"><a href="{{ "/" | relative_url }}">Home</a></li>
+                <li class="{% if page.nav_id == 'methodology' %}active{% endif %}"><a href="{{ "/methodology/" | relative_url }}">Methodology</a></li>
+                <li class="{% if page.nav_id == 'models' %}active{% endif %}"><a href="{{ "/models/" | relative_url }}">Models</a></li>
+                <li class="{% if page.nav_id == 'datasets' %}active{% endif %}"><a href="{{ "/datasets/" | relative_url }}">Datasets</a></li>
+                <li class="{% if page.nav_id == 'results' %}active{% endif %}"><a href="{{ "/results/" | relative_url }}">Results</a></li>
+                <li class="{% if page.nav_id == 'leaderboard' %}active{% endif %}"><a href="{{ "/leaderboard/" | relative_url }}">Leaderboard</a></li>
+                <li class="{% if page.nav_id == 'about' %}active{% endif %}"><a href="{{ "/about/" | relative_url }}">About</a></li>
+            </ul>
         </div>
     </div>
 </nav>

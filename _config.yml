@@ -1,15 +1,15 @@
 # Site settings
-title: Open Graph Benchmark
-email: weihua916@gmail.com
+title: Adversarial Graph Benchmark
+email: research@agb-project.org
 description: >
-  A collection of benchmark datasets, data-loaders and evaluators for graph machine learning in PyTorch.
+  Evaluating graph neural network robustness with topology-aware adversarial attacks.
 lang: en-US
 
 baseurl: "/" # the subpath of your site, e.g. /blog/
-url: https://snap-stanford.github.io/ogb-web # the base hostname & protocol for your site
-git_address: https://github.com/snap-stanford/ogb
-paper_address: https://arxiv.org/abs/2005.00687
-git_edit_address: https://github.com/snap-stanford/ogb-web/blob/gh-pages
+url: https://example.com # update when deploying
+git_address: https://github.com/your-org/agb
+paper_address: https://arxiv.org/abs/2502.06918
+git_edit_address: https://github.com/your-org/agb
 
 # theme options from https://bootswatch.com/3/
 # comment out this to use default Bootstrap
@@ -31,28 +31,18 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
+  - _docs/
+  - _data/docs.yml
+  - test-dev_leaderboard.csv
+  - test-dev_master.csv
+  - lsc_submission/
+  - update.sh
+  - update_lsc.sh
+  - update_leaderboard.py
+  - update_lsc_leaderboard.py
+  - update_kddcup2021_leaderboard.py
+  - merge_lsc_leaderboard.py
+  - retrieve_lsc_registration.py
 #timezone: USA/Berlin
-defaults:
-- scope:
-    path: _posts
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
-
-- scope:
-    path: _docs
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
-
-collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
-  posts:
-    permalink: /blog/:year/:month/:day/:title/
-    output: true
+defaults: []
+collections: {}
