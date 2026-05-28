@@ -1,4 +1,4 @@
-import { pageHeader, sectionWrapper, card, listRenderer } from "/assets/js/components.js";
+import { pageHeader, sectionWrapper, card, listRenderer } from "./components.js";
 
 const root = document.getElementById("page-root");
 

@@ -26,6 +26,7 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - data
   - Gemfile
   - Gemfile.lock
   - .idea/

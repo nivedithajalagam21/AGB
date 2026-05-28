@@ -1,58 +1,70 @@
 import { leaderboardData } from "../data/leaderboard";
+import {
+  LEADERBOARD_COLUMNS,
+  prepareLeaderboardGroups,
+  sortAndRankEntries
+} from "../assets/js/leaderboard-table";
 
-function sortAndRank(entries) {
-  return [...entries]
-    .sort((a, b) => b.score - a.score)
-    .map((row, idx) => ({ ...row, rank: idx + 1 }));
+const thStyle = { padding: "6px 8px", textAlign: "center", background: "#f1f3f5", borderBottom: "1px solid #dee2e6", fontSize: 12 };
+const tdStyle = { padding: "6px 8px", textAlign: "center", borderTop: "1px solid #eef2f7", fontSize: 13 };
+const methodStyle = { ...tdStyle, textAlign: "left" };
+
+function formatCell(value, numeric) {
+  if (value === null || value === undefined || value === "") return "—";
+  if (numeric && typeof value === "number") return Number.isInteger(value) ? String(value) : value.toFixed(1);
+  return String(value);
 }
 
 export default function LeaderboardPage() {
-  const sections = [...new Set(leaderboardData.map((row) => row.section))];
+  const groups = prepareLeaderboardGroups(leaderboardData);
+  const sections = [...new Set(groups.map((row) => row.section))];
 
   return (
     <main style={{ maxWidth: 1100, margin: "0 auto", padding: "120px 20px 80px" }}>
       <h1>Leaderboard</h1>
       <p>
-        This leaderboard presents adversarial attack performance under a standardized evaluation
-        framework. Results are reported as misclassification rates across multiple datasets, models,
-        and settings. Higher values indicate stronger attack effectiveness.
-      </p>
-      <p>
-        Values are grouped by fair protocol definitions with consistent comparison setup and
-        multiple-split reporting.
+        Compact adversarial attack leaderboard with five perturbation budgets and attack-time reporting.
       </p>
 
-      {sections.map((section) => {
-        const groups = leaderboardData.filter((row) => row.section === section);
-        return (
-          <section key={section} style={{ marginTop: 36 }}>
-            <h2>{section}</h2>
-            {groups.map((group) => {
-              const ranked = sortAndRank(group.entries);
+      {sections.map((section) => (
+        <section key={section} style={{ marginTop: 36 }}>
+          <h2>{section}</h2>
+          {groups
+            .filter((g) => g.section === section)
+            .map((group) => {
+              const ranked = sortAndRankEntries(group.entries);
               const best = ranked[0]?.method;
 
               return (
                 <div
                   key={`${group.section}-${group.dataset}-${group.victim}-${group.setting}`}
-                  style={{ border: "1px solid #dbe3ec", borderRadius: 10, marginBottom: 20, overflow: "hidden" }}
+                  style={{ border: "1px solid #dbe3ec", borderRadius: 10, marginBottom: 20, overflowX: "auto" }}
                 >
-                  <div style={{ padding: "12px 14px", borderBottom: "1px solid #e5e7eb", background: "#f8fafc", fontWeight: 600 }}>
-                    Dataset: {group.dataset} | Victim: {group.victim} | Setting: {group.setting}
+                  <div style={{ padding: "10px 12px", borderBottom: "1px solid #e5e7eb", background: "#f8fafc", fontWeight: 600, fontSize: 14 }}>
+                    {group.dataset} · {group.setting} · {group.victim}
                   </div>
-                  <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                  <table style={{ width: "100%", minWidth: 640, borderCollapse: "collapse" }}>
                     <thead>
                       <tr>
-                        <th style={{ textAlign: "left", padding: 12 }}>Rank</th>
-                        <th style={{ textAlign: "left", padding: 12 }}>Method</th>
-                        <th style={{ textAlign: "left", padding: 12 }}>Score (%)</th>
+                        {LEADERBOARD_COLUMNS.map((col) => (
+                          <th key={col.key} style={{ ...thStyle, textAlign: col.align === "left" ? "left" : "center" }}>
+                            {col.label}
+                          </th>
+                        ))}
                       </tr>
                     </thead>
                     <tbody>
                       {ranked.map((entry) => (
-                        <tr key={entry.method} style={{ background: entry.method === best ? "#eff6ff" : "transparent" }}>
-                          <td style={{ padding: 12, borderTop: "1px solid #eef2f7" }}>#{entry.rank}</td>
-                          <td style={{ padding: 12, borderTop: "1px solid #eef2f7" }}>{entry.method}</td>
-                          <td style={{ padding: 12, borderTop: "1px solid #eef2f7" }}>{entry.score.toFixed(2)}</td>
+                        <tr key={entry.method} style={{ background: entry.method === best ? "#eaf2ff" : "transparent" }}>
+                          {LEADERBOARD_COLUMNS.map((col) => {
+                            const value = col.key === "rank" ? entry.rank : entry[col.key];
+                            const style = col.key === "method" ? methodStyle : tdStyle;
+                            return (
+                              <td key={col.key} style={style}>
+                                {formatCell(value, col.numeric)}
+                              </td>
+                            );
+                          })}
                         </tr>
                       ))}
                     </tbody>
@@ -60,9 +72,8 @@ export default function LeaderboardPage() {
                 </div>
               );
             })}
-          </section>
-        );
-      })}
+        </section>
+      ))}
     </main>
   );
 }
