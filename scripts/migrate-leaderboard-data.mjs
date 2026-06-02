@@ -13,20 +13,6 @@ const dataPath = path.join(root, "assets", "data", "leaderboard.js");
 const { leaderboardData } = await import(path.join(root, "assets", "data", "leaderboard.js"));
 
 const BUDGET_SETTING_RE = /\(Budget\s*(\d)\)/i;
-const ATTACK_TIMES = {
-  "Vanilla + GCN": "2.3 hrs",
-  "L1D-RND": "1.2 hrs",
-  FGA: "2.8 hrs",
-  Nettack: "3.5 hrs",
-  PGD: "2.5 hrs",
-  "PR-BCD": "4.1 hrs",
-  SGA: "3.0 hrs",
-  GOttack: "2.3 hrs"
-};
-
-function attackTimeFor(method) {
-  return ATTACK_TIMES[method] ?? "2.1 hrs";
-}
 
 function round1(n) {
   return Math.round(n * 10) / 10;
@@ -40,7 +26,7 @@ function budgetsFromScore(score) {
     budget3: round1(score * 0.84),
     budget4: round1(score * 0.92),
     budget5: round1(score),
-    attackTime: null
+    attackTime: ""
   };
 }
 
@@ -53,7 +39,7 @@ function normalizeEntry(entry) {
       budget3: entry.budget3,
       budget4: entry.budget4,
       budget5: entry.budget5,
-      attackTime: entry.attackTime ?? attackTimeFor(entry.method)
+      attackTime: ""
     };
   }
   const b = budgetsFromScore(entry.score);
@@ -64,7 +50,7 @@ function normalizeEntry(entry) {
     budget3: b.budget3,
     budget4: b.budget4,
     budget5: b.budget5,
-    attackTime: attackTimeFor(entry.method)
+    attackTime: ""
   };
 }
 
@@ -140,7 +126,7 @@ function prepareGroups(raw) {
     setting: b.setting,
     entries: [...b.entriesByMethod.values()].map((e) => ({
       ...e,
-      attackTime: e.attackTime ?? attackTimeFor(e.method)
+      attackTime: ""
     }))
   }));
 
@@ -154,7 +140,7 @@ const SAMPLE_ROW = {
   budget3: 22.1,
   budget4: 27.0,
   budget5: 31.8,
-  attackTime: "2.3 hrs"
+  attackTime: ""
 };
 
 let groups = prepareGroups(leaderboardData);

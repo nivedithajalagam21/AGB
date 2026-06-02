@@ -24,10 +24,28 @@ function renderTable(group) {
   `;
 }
 
+function sectionAnchor(sectionName) {
+  if (sectionName.includes("Homophily")) return "homophily";
+  if (sectionName.includes("Heterophily")) return "heterophily";
+  if (sectionName.includes("Large-Scale")) return "large-scale";
+  return "";
+}
+
+const sectionIcons = {
+  homophily: "fa-line-chart",
+  heterophily: "fa-random",
+  "large-scale": "fa-database"
+};
+
 function renderSection(sectionName, groups) {
+  const idAttr = sectionAnchor(sectionName);
+  const icon = sectionIcons[idAttr] || "fa-bar-chart";
   return `
-    <section class="agb-leaderboard-section">
-      <h2>${sectionName}</h2>
+    <section class="agb-leaderboard-section"${idAttr ? ` id="${idAttr}"` : ""}>
+      <h2 class="agb-section-heading">
+        <i class="fa ${icon} agb-section-icon" aria-hidden="true"></i>
+        <span>${sectionName}</span>
+      </h2>
       ${groups.map(renderTable).join("")}
     </section>
   `;
@@ -77,29 +95,41 @@ function initLeaderboard() {
       subtitle: "Standardized attack comparison under fair and consistent evaluation protocols"
     })}
     <section class="agb-section agb-leaderboard-page">
-      <div class="container">
-        <div class="agb-panel">
+      <div class="container agb-page-shell">
+        <div class="agb-content-card agb-content-card--padded">
+        <div class="agb-panel agb-info-panel">
           <p class="agb-body-text">
+            <i class="fa fa-info-circle agb-panel-icon" aria-hidden="true"></i>
             This leaderboard is derived from standardized evaluation of adversarial attacks on GNNs. Results are reported
             across five perturbation budgets; higher values indicate stronger attack performance. Attack time reflects
             end-to-end runtime for the full evaluation protocol.
           </p>
         </div>
         <div class="agb-leaderboard-filters">
-          <label>
-            Dataset
-            <select id="filter-dataset">${options(datasetOptions, "All")}</select>
+          <label class="agb-lb-filter">
+            <span class="agb-lb-filter-label">Dataset</span>
+            <span class="agb-lb-filter-field">
+              <select id="filter-dataset">${options(datasetOptions, "All")}</select>
+              <i class="fa fa-chevron-down agb-lb-filter-chevron" aria-hidden="true"></i>
+            </span>
           </label>
-          <label>
-            Setting
-            <select id="filter-setting">${options(settingOptions, "All")}</select>
+          <label class="agb-lb-filter">
+            <span class="agb-lb-filter-label">Setting</span>
+            <span class="agb-lb-filter-field">
+              <select id="filter-setting">${options(settingOptions, "All")}</select>
+              <i class="fa fa-chevron-down agb-lb-filter-chevron" aria-hidden="true"></i>
+            </span>
           </label>
-          <label>
-            Victim model
-            <select id="filter-victim">${options(victimOptions, "All")}</select>
+          <label class="agb-lb-filter">
+            <span class="agb-lb-filter-label">Victim model</span>
+            <span class="agb-lb-filter-field">
+              <select id="filter-victim">${options(victimOptions, "All")}</select>
+              <i class="fa fa-chevron-down agb-lb-filter-chevron" aria-hidden="true"></i>
+            </span>
           </label>
         </div>
         <div id="leaderboard-results" class="agb-leaderboard-results" aria-live="polite"></div>
+        </div>
       </div>
     </section>
   `;

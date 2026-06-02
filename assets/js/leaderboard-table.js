@@ -3,40 +3,103 @@
 export const LEADERBOARD_COLUMNS = [
   { key: "rank", label: "Rank", align: "center", numeric: false },
   { key: "method", label: "Method", align: "left", numeric: false },
-  { key: "budget1", label: "Budget 1", align: "center", numeric: true },
-  { key: "budget2", label: "Budget 2", align: "center", numeric: true },
-  { key: "budget3", label: "Budget 3", align: "center", numeric: true },
-  { key: "budget4", label: "Budget 4", align: "center", numeric: true },
-  { key: "budget5", label: "Budget 5", align: "center", numeric: true },
+  { key: "budget1", label: "Budget 1", align: "center", budget: true },
+  { key: "budget2", label: "Budget 2", align: "center", budget: true },
+  { key: "budget3", label: "Budget 3", align: "center", budget: true },
+  { key: "budget4", label: "Budget 4", align: "center", budget: true },
+  { key: "budget5", label: "Budget 5", align: "center", budget: true },
   { key: "attackTime", label: "Attack Time", align: "center", numeric: false }
 ];
 
 const BUDGET_SETTING_RE = /\(Budget\s*(\d)\)/i;
 
-function formatCell(value, numeric) {
+function isBudgetStat(value) {
+  return (
+    value &&
+    typeof value === "object" &&
+    value.mean !== undefined &&
+    value.mean !== null &&
+    value.std !== undefined &&
+    value.std !== null
+  );
+}
+
+function parseBudgetString(value) {
+  const match = String(value).match(/^(\d+(?:\.\d+)?)\s*±\s*(\d+(?:\.\d+)?)$/);
+  if (!match) return null;
+  return { mean: match[1], std: match[2] };
+}
+
+export function budgetMean(value) {
+  if (value === null || value === undefined || value === "") return NaN;
+  if (typeof value === "number") return value;
+  if (isBudgetStat(value)) return Number.parseFloat(value.mean);
+  const parsed = parseBudgetString(value);
+  if (parsed) return Number.parseFloat(parsed.mean);
+  const n = Number.parseFloat(String(value));
+  return Number.isNaN(n) ? NaN : n;
+}
+
+function formatBudgetCell(value) {
   if (value === null || value === undefined || value === "") return "—";
-  if (numeric && typeof value === "number") return Number.isInteger(value) ? String(value) : value.toFixed(1);
+
+  let mean;
+  let std;
+
+  if (isBudgetStat(value)) {
+    mean = String(value.mean).trim();
+    std = String(value.std).trim();
+  } else if (typeof value === "string") {
+    const parsed = parseBudgetString(value);
+    if (parsed) {
+      mean = parsed.mean;
+      std = parsed.std;
+    } else {
+      return value;
+    }
+  } else if (typeof value === "number" && !Number.isNaN(value)) {
+    return Number.isInteger(value) ? String(value) : value.toFixed(2);
+  } else {
+    return "—";
+  }
+
+  if (!mean || !std || mean === "undefined" || std === "undefined" || mean === "null" || std === "null") {
+    return "—";
+  }
+
+  return `<span class="agb-lb-budget-cell"><span class="agb-lb-budget-mean">${mean}</span><span class="agb-lb-budget-sep"> ± </span><span class="agb-lb-budget-std">${std}</span></span>`;
+}
+
+function formatCell(value, col, { blankIfEmpty = false } = {}) {
+  if (col.budget) return formatBudgetCell(value);
+  if (value === null || value === undefined || value === "") {
+    return blankIfEmpty ? "" : "—";
+  }
+  if (col.numeric && typeof value === "number") {
+    return Number.isInteger(value) ? String(value) : value.toFixed(1);
+  }
   return String(value);
 }
 
 function sortMetric(entry) {
   for (const key of ["budget5", "budget4", "budget3", "budget2", "budget1"]) {
-    const v = entry[key];
-    if (typeof v === "number" && !Number.isNaN(v)) return v;
+    const mean = budgetMean(entry[key]);
+    if (!Number.isNaN(mean)) return mean;
   }
   return -Infinity;
 }
 
 export function normalizeEntry(entry) {
-  return {
+  const normalized = {
     method: entry.method,
     budget1: entry.budget1 ?? null,
     budget2: entry.budget2 ?? null,
     budget3: entry.budget3 ?? null,
     budget4: entry.budget4 ?? null,
     budget5: entry.budget5 ?? null,
-    attackTime: entry.attackTime ?? "—"
+    attackTime: ""
   };
+  return normalized;
 }
 
 /** Merge legacy “(Budget N)” groups if present in raw data. */
@@ -81,7 +144,7 @@ export function prepareLeaderboardGroups(rawGroups) {
       }
       const row = bucket.entriesByMethod.get(entry.method);
       const val = entry[`budget${budgetIndex}`] ?? entry.score;
-      if (typeof val === "number") row[`budget${budgetIndex}`] = val;
+      if (val !== undefined && val !== null) row[`budget${budgetIndex}`] = val;
     }
   }
 
@@ -116,7 +179,9 @@ export function renderLeaderboardTable(entries, { caption = "" } = {}) {
       const cells = LEADERBOARD_COLUMNS.map((col) => {
         const align = col.align === "left" ? "agb-lb-align-left" : "agb-lb-align-center";
         const value = col.key === "rank" ? entry.rank : entry[col.key];
-        return `<td class="agb-lb-col-${col.key} ${align}">${formatCell(value, col.numeric)}</td>`;
+        const blankIfEmpty = col.key === "attackTime";
+        const budgetClass = col.budget ? " agb-lb-budget-col" : "";
+        return `<td class="agb-lb-col-${col.key} ${align}${budgetClass}">${formatCell(value, col, { blankIfEmpty })}</td>`;
       }).join("");
       const bestClass = entry.method === bestMethod ? "is-best" : "";
       return `<tr class="${bestClass}">${cells}</tr>`;

@@ -1,34 +1,92 @@
-export const datasets = [
+/** AGB benchmark datasets (statistics from the AGB paper). */
+export const agbDatasets = [
   {
-    name: "Cora",
-    nodes: 2485,
+    name: "CORA",
+    type: "Homophilic",
+    nodes: 2708,
     edges: 5069,
-    description: "Citation network with relatively high homophily; a strong setting for testing whether attacks can break label-consistent neighborhoods."
+    features: 1432,
+    labels: 7
   },
   {
-    name: "Citeseer",
-    nodes: 2110,
+    name: "CITESEER",
+    type: "Homophilic",
+    nodes: 3327,
     edges: 3668,
-    description: "Sparse citation graph with noisier connectivity, useful for measuring attack transfer under weaker local consistency."
+    features: 3703,
+    labels: 6
   },
   {
-    name: "Pubmed",
+    name: "PUBMED",
+    type: "Homophilic",
     nodes: 19717,
-    edges: 44324,
-    description: "Large-scale biomedical citation graph that stress-tests scalability of topology-aware attacks."
+    edges: 44325,
+    features: 500,
+    labels: 3
   },
   {
-    name: "BlogCatalog",
-    nodes: 5196,
-    edges: 171743,
-    description: "Social graph with lower homophily and heterogeneous communities, exposing robustness under weak label alignment."
+    name: "CHAMELEON",
+    type: "Heterophilic",
+    nodes: 2277,
+    edges: 36101,
+    features: 3132,
+    labels: 5
   },
   {
-    name: "Polblogs",
-    nodes: 1490,
-    edges: 19090,
-    description: "Political hyperlink graph with strong ideological clustering, informative for studying perturbations around polarized communities."
+    name: "SQUIRREL",
+    type: "Heterophilic",
+    nodes: 5201,
+    edges: 217073,
+    features: 3148,
+    labels: 5
+  },
+  {
+    name: "OGB-ARXIV",
+    type: "Large-scale",
+    nodes: 169343,
+    edges: 1166243,
+    features: 128,
+    labels: 40
   }
 ];
 
-export const homophilyNote = "Homophily level changes attack behavior: high-homophily graphs can be disrupted by breaking a few consistent links, while lower-homophily graphs require topology-aware candidate selection to find structurally critical perturbation points.";
+export const datasetsHero = {
+  title: "Datasets",
+  subtitle:
+    "AGB provides benchmark datasets for fair and standardized evaluation of adversarial graph neural networks.",
+  paragraph:
+    "AGB evaluates adversarial attacks and defenses across homophilic, heterophilic, and large-scale graph datasets. The benchmark uses standardized splits, target node selection, attack budgets, and evaluation protocols to enable reliable comparison across graph learning models."
+};
+
+export const datasetCategories = [
+  {
+    title: "Homophilic Graphs",
+    datasets: "CORA, CITESEER, PUBMED",
+    text: "Citation and co-authorship style graphs where connected nodes often share similar labels."
+  },
+  {
+    title: "Heterophilic Graphs",
+    datasets: "CHAMELEON, SQUIRREL",
+    text: "Webpage networks where connected nodes may belong to different classes, making robustness evaluation more challenging."
+  },
+  {
+    title: "Large-Scale Graph",
+    datasets: "OGB-ARXIV",
+    text: "A large citation network used to test scalability of adversarial attacks and defenses."
+  }
+];
+
+export const evaluationSetting = [
+  { label: "Task", value: "Semi-supervised node classification" },
+  { label: "Splits", value: "Train / validation / test = 10% / 10% / 80%" },
+  { label: "Random splits", value: "K = 5" },
+  { label: "Risk assessment runs", value: "R = 3" },
+  { label: "Attack budgets", value: "Δ = 1 to 5" },
+  { label: "Scenarios", value: "Evasion and poisoning" }
+];
+
+/** @deprecated Use agbDatasets */
+export const datasets = agbDatasets;
+
+export const homophilyNote =
+  "Homophily level changes attack behavior: high-homophily graphs can be disrupted by breaking a few consistent links, while lower-homophily graphs require topology-aware candidate selection to find structurally critical perturbation points.";

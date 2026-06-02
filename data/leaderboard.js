@@ -1,1570 +1,1561 @@
 export const leaderboardData = [
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CORA",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
-        method: "Vanilla + GCN",
-        budget1: 12.5,
-        budget2: 18.3,
-        budget3: 22.1,
-        budget4: 27,
-        budget5: 31.8,
-        attackTime: "2.3 hrs"
-      },
-      {
         method: "L1D-RND",
-        budget1: 9,
-        budget2: 10,
-        budget3: 11.1,
-        budget4: 12.1,
-        budget5: 13.2,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "13.20", std: "4.33" },
+        budget2: { mean: "22.53", std: "6.95" },
+        budget3: { mean: "29.20", std: "5.60" },
+        budget4: { mean: "32.93", std: "6.67" },
+        budget5: { mean: "32.13", std: "5.04" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 19,
-        budget2: 21.2,
-        budget3: 23.4,
-        budget4: 25.6,
-        budget5: 27.9,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "27.87", std: "3.74" },
+        budget2: { mean: "46.13", std: "7.03" },
+        budget3: { mean: "55.73", std: "4.33" },
+        budget4: { mean: "60.93", std: "5.06" },
+        budget5: { mean: "64.67", std: "4.76" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 20.1,
-        budget2: 22.5,
-        budget3: 24.9,
-        budget4: 27.2,
-        budget5: 29.6,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "29.60", std: "5.19" },
+        budget2: { mean: "49.60", std: "5.77" },
+        budget3: { mean: "56.80", std: "4.52" },
+        budget4: { mean: "62.13", std: "4.17" },
+        budget5: { mean: "63.73", std: "3.99" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 19.9,
-        budget2: 22.3,
-        budget3: 24.6,
-        budget4: 27,
-        budget5: 29.3,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "29.33", std: "4.12" },
+        budget2: { mean: "48.00", std: "5.24" },
+        budget3: { mean: "54.93", std: "3.28" },
+        budget4: { mean: "59.60", std: "4.36" },
+        budget5: { mean: "59.20", std: "5.49" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 21.8,
-        budget2: 24.4,
-        budget3: 27,
-        budget4: 29.6,
-        budget5: 32.1,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "32.13", std: "3.50" },
+        budget2: { mean: "53.87", std: "4.44" },
+        budget3: { mean: "59.20", std: "2.81" },
+        budget4: { mean: "63.20", std: "3.36" },
+        budget5: { mean: "65.73", std: "3.92" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 17.9,
-        budget2: 20,
-        budget3: 22.1,
-        budget4: 24.2,
-        budget5: 26.3,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "26.27", std: "3.69" },
+        budget2: { mean: "44.67", std: "7.58" },
+        budget3: { mean: "55.33", std: "4.88" },
+        budget4: { mean: "58.13", std: "3.81" },
+        budget5: { mean: "60.67", std: "5.00" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 19.4,
-        budget2: 21.7,
-        budget3: 24,
-        budget4: 26.2,
-        budget5: 28.5,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "28.53", std: "4.37" },
+        budget2: { mean: "49.33", std: "6.83" },
+        budget3: { mean: "56.13", std: "5.26" },
+        budget4: { mean: "60.53", std: "6.12" },
+        budget5: { mean: "62.13", std: "4.87" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CORA",
     victim: "GCN",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 10.5,
-        budget2: 11.8,
-        budget3: 13,
-        budget4: 14.2,
-        budget5: 15.5,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "15.47", std: "4.03" },
+        budget2: { mean: "23.33", std: "6.79" },
+        budget3: { mean: "30.27", std: "6.18" },
+        budget4: { mean: "33.47", std: "7.03" },
+        budget5: { mean: "34.67", std: "6.87" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 20.4,
-        budget2: 22.8,
-        budget3: 25.2,
-        budget4: 27.6,
-        budget5: 30,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "30.00", std: "5.61" },
+        budget2: { mean: "50.00", std: "4.78" },
+        budget3: { mean: "56.27", std: "4.13" },
+        budget4: { mean: "60.53", std: "4.37" },
+        budget5: { mean: "65.07", std: "4.77" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 22.8,
-        budget2: 25.4,
-        budget3: 28.1,
-        budget4: 30.8,
-        budget5: 33.5,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "33.47", std: "3.58" },
+        budget2: { mean: "51.87", std: "4.56" },
+        budget3: { mean: "58.67", std: "2.69" },
+        budget4: { mean: "62.13", std: "3.66" },
+        budget5: { mean: "63.07", std: "3.10" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 21.6,
-        budget2: 24.1,
-        budget3: 26.7,
-        budget4: 29.2,
-        budget5: 31.7,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "31.73", std: "3.69" },
+        budget2: { mean: "48.80", std: "4.59" },
+        budget3: { mean: "55.60", std: "2.95" },
+        budget4: { mean: "59.33", std: "2.89" },
+        budget5: { mean: "58.53", std: "4.87" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 22.3,
-        budget2: 24.9,
-        budget3: 27.6,
-        budget4: 30.2,
-        budget5: 32.8,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "32.80", std: "6.04" },
+        budget2: { mean: "53.87", std: "3.66" },
+        budget3: { mean: "57.60", std: "3.31" },
+        budget4: { mean: "60.67", std: "3.52" },
+        budget5: { mean: "63.73", std: "3.28" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 19.9,
-        budget2: 22.3,
-        budget3: 24.6,
-        budget4: 27,
-        budget5: 29.3,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "29.33", std: "3.83" },
+        budget2: { mean: "48.13", std: "6.48" },
+        budget3: { mean: "55.87", std: "3.81" },
+        budget4: { mean: "60.00", std: "2.73" },
+        budget5: { mean: "63.73", std: "4.46" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 22.7,
-        budget2: 25.3,
-        budget3: 28,
-        budget4: 30.7,
-        budget5: 33.3,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "33.33", std: "7.20" },
+        budget2: { mean: "51.47", std: "6.65" },
+        budget3: { mean: "57.73", std: "5.18" },
+        budget4: { mean: "61.07", std: "3.92" },
+        budget5: { mean: "63.20", std: "3.84" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CORA",
     victim: "GNNGuard",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 4.3,
-        budget2: 4.8,
-        budget3: 5.3,
-        budget4: 5.8,
-        budget5: 6.3,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "6.27", std: "4.13" },
+        budget2: { mean: "9.73", std: "5.60" },
+        budget3: { mean: "11.73", std: "4.83" },
+        budget4: { mean: "17.20", std: "5.44" },
+        budget5: { mean: "18.67", std: "6.13" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 4.5,
-        budget2: 5.1,
-        budget3: 5.6,
-        budget4: 6.1,
-        budget5: 6.7,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "6.67", std: "3.44" },
+        budget2: { mean: "11.87", std: "4.37" },
+        budget3: { mean: "14.93", std: "4.71" },
+        budget4: { mean: "17.20", std: "4.71" },
+        budget5: { mean: "22.13", std: "6.21" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 4.6,
-        budget2: 5.2,
-        budget3: 5.7,
-        budget4: 6.3,
-        budget5: 6.8,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "6.80", std: "4.77" },
+        budget2: { mean: "13.07", std: "5.01" },
+        budget3: { mean: "16.93", std: "6.54" },
+        budget4: { mean: "20.40", std: "6.68" },
+        budget5: { mean: "25.07", std: "6.45" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 4.6,
-        budget2: 5.2,
-        budget3: 5.7,
-        budget4: 6.3,
-        budget5: 6.8,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "6.80", std: "2.60" },
+        budget2: { mean: "11.33", std: "4.82" },
+        budget3: { mean: "16.80", std: "5.28" },
+        budget4: { mean: "20.40", std: "5.08" },
+        budget5: { mean: "21.07", std: "4.95" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 5.5,
-        budget2: 6.2,
-        budget3: 6.8,
-        budget4: 7.5,
-        budget5: 8.1,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "8.13", std: "3.34" },
+        budget2: { mean: "13.33", std: "3.98" },
+        budget3: { mean: "15.60", std: "4.67" },
+        budget4: { mean: "17.47", std: "3.81" },
+        budget5: { mean: "22.80", std: "6.13" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 5.7,
-        budget2: 6.4,
-        budget3: 7.1,
-        budget4: 7.7,
-        budget5: 8.4,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "8.40", std: "4.29" },
+        budget2: { mean: "12.80", std: "3.28" },
+        budget3: { mean: "18.53", std: "5.04" },
+        budget4: { mean: "21.07", std: "4.53" },
+        budget5: { mean: "22.53", std: "5.53" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 5.7,
-        budget2: 6.4,
-        budget3: 7.1,
-        budget4: 7.7,
-        budget5: 8.4,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "8.40", std: "4.97" },
+        budget2: { mean: "13.20", std: "4.33" },
+        budget3: { mean: "17.20", std: "4.59" },
+        budget4: { mean: "19.20", std: "4.89" },
+        budget5: { mean: "23.20", std: "5.89" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CORA",
     victim: "GNNGuard",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 4.7,
-        budget2: 5.3,
-        budget3: 5.8,
-        budget4: 6.4,
-        budget5: 6.9,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "6.93", std: "4.40" },
+        budget2: { mean: "10.40", std: "5.14" },
+        budget3: { mean: "12.80", std: "3.76" },
+        budget4: { mean: "18.00", std: "4.90" },
+        budget5: { mean: "19.47", std: "5.88" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 5.1,
-        budget2: 5.7,
-        budget3: 6.3,
-        budget4: 6.9,
-        budget5: 7.5,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "7.47", std: "3.96" },
+        budget2: { mean: "12.53", std: "4.50" },
+        budget3: { mean: "16.80", std: "4.89" },
+        budget4: { mean: "19.20", std: "4.65" },
+        budget5: { mean: "24.80", std: "5.60" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 5.1,
-        budget2: 5.7,
-        budget3: 6.3,
-        budget4: 6.9,
-        budget5: 7.5,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "7.47", std: "5.37" },
+        budget2: { mean: "14.93", std: "5.55" },
+        budget3: { mean: "19.20", std: "6.67" },
+        budget4: { mean: "22.13", std: "6.30" },
+        budget5: { mean: "28.40", std: "5.87" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 4.7,
-        budget2: 5.3,
-        budget3: 5.8,
-        budget4: 6.4,
-        budget5: 6.9,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "6.93", std: "3.01" },
+        budget2: { mean: "12.40", std: "5.08" },
+        budget3: { mean: "17.47", std: "5.10" },
+        budget4: { mean: "21.07", std: "5.39" },
+        budget5: { mean: "22.00", std: "5.81" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 6.1,
-        budget2: 6.8,
-        budget3: 7.5,
-        budget4: 8.2,
-        budget5: 8.9,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "8.93", std: "3.99" },
+        budget2: { mean: "14.00", std: "4.07" },
+        budget3: { mean: "17.07", std: "5.75" },
+        budget4: { mean: "19.07", std: "3.99" },
+        budget5: { mean: "23.87", std: "7.27" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 6.5,
-        budget2: 7.3,
-        budget3: 8.1,
-        budget4: 8.8,
-        budget5: 9.6,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "9.60", std: "3.64" },
+        budget2: { mean: "15.33", std: "3.75" },
+        budget3: { mean: "20.80", std: "5.89" },
+        budget4: { mean: "25.07", std: "5.95" },
+        budget5: { mean: "28.13", std: "7.11" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 7,
-        budget2: 7.8,
-        budget3: 8.6,
-        budget4: 9.4,
-        budget5: 10.3,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "10.27", std: "6.54" },
+        budget2: { mean: "15.07", std: "5.01" },
+        budget3: { mean: "19.07", std: "4.27" },
+        budget4: { mean: "22.27", std: "6.18" },
+        budget5: { mean: "26.13", std: "5.78" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CITESEER",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 10.3,
-        budget2: 11.6,
-        budget3: 12.8,
-        budget4: 14,
-        budget5: 15.2,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "15.20", std: "4.20" },
+        budget2: { mean: "28.67", std: "12.39" },
+        budget3: { mean: "36.53", std: "9.09" },
+        budget4: { mean: "37.73", std: "9.44" },
+        budget5: { mean: "42.13", std: "7.11" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 17.3,
-        budget2: 19.4,
-        budget3: 21.4,
-        budget4: 23.4,
-        budget5: 25.5,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "25.47", std: "4.10" },
+        budget2: { mean: "36.00", std: "8.18" },
+        budget3: { mean: "50.27", std: "5.90" },
+        budget4: { mean: "56.53", std: "2.97" },
+        budget5: { mean: "58.27", std: "4.27" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 19.1,
-        budget2: 21.4,
-        budget3: 23.6,
-        budget4: 25.9,
-        budget5: 28.1,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "28.13", std: "7.15" },
+        budget2: { mean: "45.33", std: "9.06" },
+        budget3: { mean: "49.87", std: "9.61" },
+        budget4: { mean: "58.93", std: "5.85" },
+        budget5: { mean: "59.73", std: "3.92" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 17.3,
-        budget2: 19.4,
-        budget3: 21.4,
-        budget4: 23.4,
-        budget5: 25.5,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "25.47", std: "4.87" },
+        budget2: { mean: "40.27", std: "7.55" },
+        budget3: { mean: "48.13", std: "7.23" },
+        budget4: { mean: "52.27", std: "7.28" },
+        budget5: { mean: "55.47", std: "5.15" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 23.5,
-        budget2: 26.2,
-        budget3: 29,
-        budget4: 31.8,
-        budget5: 34.5,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "34.53", std: "6.82" },
+        budget2: { mean: "54.67", std: "5.05" },
+        budget3: { mean: "60.40", std: "4.42" },
+        budget4: { mean: "64.67", std: "5.16" },
+        budget5: { mean: "65.87", std: "4.17" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 16,
-        budget2: 17.8,
-        budget3: 19.7,
-        budget4: 21.6,
-        budget5: 23.5,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "23.47", std: "2.77" },
+        budget2: { mean: "35.87", std: "6.07" },
+        budget3: { mean: "47.47", std: "4.31" },
+        budget4: { mean: "51.07", std: "4.95" },
+        budget5: { mean: "53.73", std: "3.99" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 17.4,
-        budget2: 19.5,
-        budget3: 21.5,
-        budget4: 23.6,
-        budget5: 25.6,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "25.60", std: "4.22" },
+        budget2: { mean: "39.33", std: "9.03" },
+        budget3: { mean: "51.60", std: "6.10" },
+        budget4: { mean: "57.33", std: "4.82" },
+        budget5: { mean: "56.80", std: "7.40" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CITESEER",
     victim: "GCN",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 11.1,
-        budget2: 12.4,
-        budget3: 13.7,
-        budget4: 15,
-        budget5: 16.3,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "16.27", std: "4.33" },
+        budget2: { mean: "29.87", std: "12.77" },
+        budget3: { mean: "37.73", std: "9.56" },
+        budget4: { mean: "40.13", std: "9.12" },
+        budget5: { mean: "42.93", std: "6.04" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 21.7,
-        budget2: 24.2,
-        budget3: 26.8,
-        budget4: 29.3,
-        budget5: 31.9,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "31.87", std: "7.39" },
+        budget2: { mean: "49.87", std: "3.81" },
+        budget3: { mean: "56.67", std: "5.43" },
+        budget4: { mean: "60.13", std: "5.83" },
+        budget5: { mean: "63.73", std: "5.39" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 24.8,
-        budget2: 27.7,
-        budget3: 30.6,
-        budget4: 33.5,
-        budget5: 36.4,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "36.40", std: "6.51" },
+        budget2: { mean: "51.73", std: "7.52" },
+        budget3: { mean: "55.87", std: "10.38" },
+        budget4: { mean: "62.27", std: "5.65" },
+        budget5: { mean: "63.33", std: "5.43" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 20.9,
-        budget2: 23.4,
-        budget3: 25.9,
-        budget4: 28.3,
-        budget5: 30.8,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "30.80", std: "6.79" },
+        budget2: { mean: "45.87", std: "5.83" },
+        budget3: { mean: "51.73", std: "9.56" },
+        budget4: { mean: "56.27", std: "3.53" },
+        budget5: { mean: "57.73", std: "5.50" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 23.3,
-        budget2: 26,
-        budget3: 28.8,
-        budget4: 31.5,
-        budget5: 34.3,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "34.27", std: "6.32" },
+        budget2: { mean: "52.40", std: "3.64" },
+        budget3: { mean: "57.87", std: "5.42" },
+        budget4: { mean: "62.40", std: "4.73" },
+        budget5: { mean: "63.73", std: "3.84" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 17.1,
-        budget2: 19.2,
-        budget3: 21.2,
-        budget4: 23.2,
-        budget5: 25.2,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "25.20", std: "3.61" },
+        budget2: { mean: "44.13", std: "4.93" },
+        budget3: { mean: "53.20", std: "4.52" },
+        budget4: { mean: "54.53", std: "4.10" },
+        budget5: { mean: "60.27", std: "4.77" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 23.3,
-        budget2: 26,
-        budget3: 28.8,
-        budget4: 31.5,
-        budget5: 34.3,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "34.27", std: "8.38" },
+        budget2: { mean: "48.40", std: "6.77" },
+        budget3: { mean: "57.87", std: "4.63" },
+        budget4: { mean: "59.33", std: "4.82" },
+        budget5: { mean: "62.00", std: "6.09" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CITESEER",
     victim: "GNNGuard",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 3.2,
-        budget2: 3.5,
-        budget3: 3.9,
-        budget4: 4.3,
-        budget5: 4.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "4.67", std: "3.68" },
+        budget2: { mean: "7.60", std: "5.46" },
+        budget3: { mean: "9.60", std: "5.30" },
+        budget4: { mean: "10.53", std: "5.10" },
+        budget5: { mean: "11.07", std: "5.18" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 2.3,
-        budget2: 2.5,
-        budget3: 2.8,
-        budget4: 3.1,
-        budget5: 3.3,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "3.33", std: "3.18" },
+        budget2: { mean: "6.93", std: "3.69" },
+        budget3: { mean: "9.07", std: "4.06" },
+        budget4: { mean: "13.33", std: "5.16" },
+        budget5: { mean: "13.07", std: "6.04" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 3.2,
-        budget2: 3.5,
-        budget3: 3.9,
-        budget4: 4.3,
-        budget5: 4.7,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "4.67", std: "2.35" },
+        budget2: { mean: "9.73", std: "4.27" },
+        budget3: { mean: "13.47", std: "5.93" },
+        budget4: { mean: "17.07", std: "5.12" },
+        budget5: { mean: "20.53", std: "5.78" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 2.1,
-        budget2: 2.3,
-        budget3: 2.6,
-        budget4: 2.8,
-        budget5: 3.1,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "3.07", std: "2.49" },
+        budget2: { mean: "5.33", std: "3.27" },
+        budget3: { mean: "8.80", std: "4.77" },
+        budget4: { mean: "11.60", std: "3.72" },
+        budget5: { mean: "13.07", std: "4.46" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 2.1,
-        budget2: 2.3,
-        budget3: 2.6,
-        budget4: 2.8,
-        budget5: 3.1,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "3.07", std: "2.12" },
+        budget2: { mean: "6.53", std: "2.33" },
+        budget3: { mean: "8.93", std: "3.20" },
+        budget4: { mean: "11.07", std: "4.40" },
+        budget5: { mean: "15.07", std: "5.23" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 2.7,
-        budget2: 3,
-        budget3: 3.4,
-        budget4: 3.7,
-        budget5: 4,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "4.00", std: "2.73" },
+        budget2: { mean: "8.00", std: "5.81" },
+        budget3: { mean: "10.13", std: "4.56" },
+        budget4: { mean: "13.20", std: "5.06" },
+        budget5: { mean: "14.40", std: "4.08" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 3.2,
-        budget2: 3.5,
-        budget3: 3.9,
-        budget4: 4.3,
-        budget5: 4.7,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "4.67", std: "2.89" },
+        budget2: { mean: "6.80", std: "4.77" },
+        budget3: { mean: "10.13", std: "4.56" },
+        budget4: { mean: "13.20", std: "5.17" },
+        budget5: { mean: "15.87", std: "3.81" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "CITESEER",
     victim: "GNNGuard",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 3.3,
-        budget2: 3.6,
-        budget3: 4,
-        budget4: 4.4,
-        budget5: 4.8,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "4.80", std: "3.84" },
+        budget2: { mean: "7.87", std: "5.53" },
+        budget3: { mean: "9.87", std: "5.21" },
+        budget4: { mean: "10.53", std: "4.93" },
+        budget5: { mean: "11.47", std: "4.69" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 3,
-        budget2: 3.3,
-        budget3: 3.7,
-        budget4: 4,
-        budget5: 4.4,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "4.40", std: "3.31" },
+        budget2: { mean: "9.07", std: "3.77" },
+        budget3: { mean: "10.93", std: "3.61" },
+        budget4: { mean: "14.40", std: "4.61" },
+        budget5: { mean: "14.27", std: "6.13" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 4.1,
-        budget2: 4.6,
-        budget3: 5,
-        budget4: 5.5,
-        budget5: 6,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "6.00", std: "2.93" },
+        budget2: { mean: "10.53", std: "4.24" },
+        budget3: { mean: "14.67", std: "6.03" },
+        budget4: { mean: "19.33", std: "6.62" },
+        budget5: { mean: "22.53", std: "5.83" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 2.2,
-        budget2: 2.4,
-        budget3: 2.7,
-        budget4: 2.9,
-        budget5: 3.2,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "3.20", std: "2.11" },
+        budget2: { mean: "6.80", std: "3.28" },
+        budget3: { mean: "9.87", std: "4.98" },
+        budget4: { mean: "13.20", std: "3.19" },
+        budget5: { mean: "14.67", std: "4.51" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 2.2,
-        budget2: 2.4,
-        budget3: 2.7,
-        budget4: 2.9,
-        budget5: 3.2,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "3.20", std: "1.97" },
+        budget2: { mean: "7.47", std: "2.67" },
+        budget3: { mean: "10.27", std: "3.53" },
+        budget4: { mean: "12.53", std: "5.48" },
+        budget5: { mean: "17.87", std: "5.97" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 3.3,
-        budget2: 3.6,
-        budget3: 4,
-        budget4: 4.4,
-        budget5: 4.8,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "4.80", std: "3.00" },
+        budget2: { mean: "8.93", std: "6.04" },
+        budget3: { mean: "10.67", std: "4.88" },
+        budget4: { mean: "15.33", std: "5.64" },
+        budget5: { mean: "16.93", std: "4.83" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 3.3,
-        budget2: 3.6,
-        budget3: 4,
-        budget4: 4.4,
-        budget5: 4.8,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "4.80", std: "2.70" },
+        budget2: { mean: "7.87", std: "4.44" },
+        budget3: { mean: "10.80", std: "4.71" },
+        budget4: { mean: "14.27", std: "5.01" },
+        budget5: { mean: "17.20", std: "4.52" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "PUBMED",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 7.4,
-        budget2: 8.3,
-        budget3: 9.2,
-        budget4: 10.1,
-        budget5: 10.9,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "10.93", std: "3.01" },
+        budget2: { mean: "15.47", std: "4.87" },
+        budget3: { mean: "17.20", std: "6.58" },
+        budget4: { mean: "18.80", std: "5.28" },
+        budget5: { mean: "23.60", std: "9.63" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 24.2,
-        budget2: 27.1,
-        budget3: 29.9,
-        budget4: 32.8,
-        budget5: 35.6,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "35.60", std: "3.14" },
+        budget2: { mean: "47.60", std: "5.77" },
+        budget3: { mean: "55.33", std: "4.12" },
+        budget4: { mean: "58.40", std: "2.29" },
+        budget5: { mean: "58.00", std: "3.02" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 22.9,
-        budget2: 25.6,
-        budget3: 28.3,
-        budget4: 31,
-        budget5: 33.7,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "33.73", std: "3.37" },
+        budget2: { mean: "55.73", std: "4.33" },
+        budget3: { mean: "57.47", std: "2.20" },
+        budget4: { mean: "58.67", std: "2.09" },
+        budget5: { mean: "58.67", std: "2.23" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 23.2,
-        budget2: 25.9,
-        budget3: 28.7,
-        budget4: 31.4,
-        budget5: 34.1,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "34.13", std: "3.66" },
+        budget2: { mean: "40.67", std: "3.98" },
+        budget3: { mean: "40.93", std: "5.18" },
+        budget4: { mean: "44.80", std: "5.75" },
+        budget5: { mean: "44.93", std: "6.27" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 20.1,
-        budget2: 22.5,
-        budget3: 24.9,
-        budget4: 27.2,
-        budget5: 29.6,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "29.60", std: "3.04" },
+        budget2: { mean: "36.53", std: "3.25" },
+        budget3: { mean: "45.73", std: "3.92" },
+        budget4: { mean: "51.47", std: "4.56" },
+        budget5: { mean: "54.13", std: "3.25" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 23.3,
-        budget2: 26,
-        budget3: 28.8,
-        budget4: 31.5,
-        budget5: 34.3,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "34.27", std: "4.27" },
+        budget2: { mean: "42.13", std: "6.30" },
+        budget3: { mean: "51.33", std: "7.08" },
+        budget4: { mean: "54.27", std: "6.71" },
+        budget5: { mean: "54.80", std: "4.46" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 24.4,
-        budget2: 27.3,
-        budget3: 30.1,
-        budget4: 33,
-        budget5: 35.9,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "35.87", std: "3.42" },
+        budget2: { mean: "48.00", std: "6.46" },
+        budget3: { mean: "56.13", std: "3.58" },
+        budget4: { mean: "58.13", std: "2.77" },
+        budget5: { mean: "59.60", std: "2.16" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "PUBMED",
     victim: "GCN",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 6.6,
-        budget2: 7.4,
-        budget3: 8.2,
-        budget4: 9,
-        budget5: 9.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "9.73", std: "3.10" },
+        budget2: { mean: "15.47", std: "4.81" },
+        budget3: { mean: "17.33", std: "5.64" },
+        budget4: { mean: "19.33", std: "5.49" },
+        budget5: { mean: "23.20", std: "9.91" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 24,
-        budget2: 26.9,
-        budget3: 29.7,
-        budget4: 32.5,
-        budget5: 35.3,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "35.33", std: "3.09" },
+        budget2: { mean: "47.47", std: "4.93" },
+        budget3: { mean: "55.33", std: "4.58" },
+        budget4: { mean: "58.53", std: "1.77" },
+        budget5: { mean: "58.00", std: "2.62" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 23.2,
-        budget2: 25.9,
-        budget3: 28.7,
-        budget4: 31.4,
-        budget5: 34.1,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "34.13", std: "4.69" },
+        budget2: { mean: "54.80", std: "3.36" },
+        budget3: { mean: "57.47", std: "1.92" },
+        budget4: { mean: "58.40", std: "2.03" },
+        budget5: { mean: "58.40", std: "1.88" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 22.8,
-        budget2: 25.5,
-        budget3: 28.2,
-        budget4: 30.9,
-        budget5: 33.6,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "33.60", std: "3.48" },
+        budget2: { mean: "40.67", std: "4.45" },
+        budget3: { mean: "40.93", std: "5.12" },
+        budget4: { mean: "45.07", std: "5.50" },
+        budget5: { mean: "45.47", std: "6.44" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 20.1,
-        budget2: 22.5,
-        budget3: 24.9,
-        budget4: 27.2,
-        budget5: 29.6,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "29.60", std: "3.14" },
+        budget2: { mean: "36.53", std: "3.07" },
+        budget3: { mean: "45.47", std: "3.42" },
+        budget4: { mean: "50.13", std: "4.50" },
+        budget5: { mean: "54.40", std: "2.85" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 23.2,
-        budget2: 25.9,
-        budget3: 28.7,
-        budget4: 31.4,
-        budget5: 34.1,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "34.13", std: "4.03" },
+        budget2: { mean: "41.60", std: "5.41" },
+        budget3: { mean: "50.93", std: "7.48" },
+        budget4: { mean: "54.00", std: "6.05" },
+        budget5: { mean: "54.40", std: "4.91" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 24.2,
-        budget2: 27.1,
-        budget3: 29.9,
-        budget4: 32.8,
-        budget5: 35.6,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "35.60", std: "3.40" },
+        budget2: { mean: "47.60", std: "5.51" },
+        budget3: { mean: "55.73", std: "4.53" },
+        budget4: { mean: "58.13", std: "2.67" },
+        budget5: { mean: "59.20", std: "1.97" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Homophily Results (Table 2)",
-    dataset: "PUBMED",
-    victim: "GNNGuard",
-    setting: "Evasion",
-    entries: [
-      {
-        method: "L1D-RND",
-        budget1: 4.4,
-        budget2: 5,
-        budget3: 5.5,
-        budget4: 6,
-        budget5: 6.5,
-        attackTime: "1.2 hrs"
-      },
-      {
-        method: "FGA",
-        budget1: 2.4,
-        budget2: 2.7,
-        budget3: 3,
-        budget4: 3.3,
-        budget5: 3.6,
-        attackTime: "2.8 hrs"
-      },
-      {
-        method: "Nettack",
-        budget1: 2,
-        budget2: 2.2,
-        budget3: 2.5,
-        budget4: 2.7,
-        budget5: 2.9,
-        attackTime: "3.5 hrs"
-      },
-      {
-        method: "PGD",
-        budget1: 1.7,
-        budget2: 1.9,
-        budget3: 2.1,
-        budget4: 2.3,
-        budget5: 2.5,
-        attackTime: "2.5 hrs"
-      },
-      {
-        method: "PR-BCD",
-        budget1: 2.9,
-        budget2: 3.2,
-        budget3: 3.6,
-        budget4: 3.9,
-        budget5: 4.3,
-        attackTime: "4.1 hrs"
-      },
-      {
-        method: "SGA",
-        budget1: 2.4,
-        budget2: 2.6,
-        budget3: 2.9,
-        budget4: 3.2,
-        budget5: 3.5,
-        attackTime: "3.0 hrs"
-      },
-      {
-        method: "GOttack",
-        budget1: 2.1,
-        budget2: 2.3,
-        budget3: 2.6,
-        budget4: 2.8,
-        budget5: 3.1,
-        attackTime: "2.3 hrs"
-      }
-    ]
-  },
-  {
-    section: "Homophily Results (Table 2)",
+    section: "Homophily Results",
     dataset: "PUBMED",
     victim: "GNNGuard",
-    setting: "Poisoning",
+    setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 4.4,
-        budget2: 5,
-        budget3: 5.5,
-        budget4: 6,
-        budget5: 6.5,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "6.53", std: "4.63" },
+        budget2: { mean: "8.27", std: "4.20" },
+        budget3: { mean: "9.73", std: "4.53" },
+        budget4: { mean: "10.13", std: "5.68" },
+        budget5: { mean: "12.40", std: "5.46" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 3.3,
-        budget2: 3.6,
-        budget3: 4,
-        budget4: 4.4,
-        budget5: 4.8,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "3.60", std: "1.88" },
+        budget2: { mean: "4.67", std: "2.35" },
+        budget3: { mean: "7.47", std: "2.97" },
+        budget4: { mean: "10.27", std: "2.81" },
+        budget5: { mean: "12.40", std: "3.56" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 3,
-        budget2: 3.3,
-        budget3: 3.7,
-        budget4: 4,
-        budget5: 4.4,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "2.93", std: "1.67" },
+        budget2: { mean: "7.33", std: "3.75" },
+        budget3: { mean: "10.13", std: "3.50" },
+        budget4: { mean: "13.73", std: "4.89" },
+        budget5: { mean: "15.87", std: "3.89" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 2.9,
-        budget2: 3.2,
-        budget3: 3.6,
-        budget4: 3.9,
-        budget5: 4.3,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "2.53", std: "1.60" },
+        budget2: { mean: "5.47", std: "2.07" },
+        budget3: { mean: "6.80", std: "3.28" },
+        budget4: { mean: "10.40", std: "2.95" },
+        budget5: { mean: "11.33", std: "4.05" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 3.8,
-        budget2: 4.3,
-        budget3: 4.7,
-        budget4: 5.2,
-        budget5: 5.6,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "4.27", std: "2.25" },
+        budget2: { mean: "8.53", std: "3.74" },
+        budget3: { mean: "12.40", std: "4.01" },
+        budget4: { mean: "15.33", std: "4.19" },
+        budget5: { mean: "17.33", std: "3.52" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 3.4,
-        budget2: 3.7,
-        budget3: 4.1,
-        budget4: 4.5,
-        budget5: 4.9,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "3.47", std: "1.92" },
+        budget2: { mean: "6.13", std: "3.07" },
+        budget3: { mean: "7.33", std: "2.35" },
+        budget4: { mean: "9.87", std: "4.03" },
+        budget5: { mean: "11.73", std: "4.27" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 3.4,
-        budget2: 3.7,
-        budget3: 4.1,
-        budget4: 4.5,
-        budget5: 4.9,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "3.07", std: "2.25" },
+        budget2: { mean: "6.80", std: "3.10" },
+        budget3: { mean: "9.20", std: "3.00" },
+        budget4: { mean: "11.20", std: "3.00" },
+        budget5: { mean: "13.87", std: "3.42" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
+    section: "Homophily Results",
+    dataset: "PUBMED",
+    victim: "GNNGuard",
+    setting: "Poisoning",
+    entries: [
+      {
+        method: "L1D-RND",
+        budget1: { mean: "6.53", std: "4.93" },
+        budget2: { mean: "8.00", std: "4.21" },
+        budget3: { mean: "9.33", std: "3.90" },
+        budget4: { mean: "10.40", std: "5.96" },
+        budget5: { mean: "12.53", std: "5.48" },
+        attackTime: ""
+      },
+      {
+        method: "FGA",
+        budget1: { mean: "4.80", std: "3.19" },
+        budget2: { mean: "5.73", std: "3.10" },
+        budget3: { mean: "8.93", std: "3.01" },
+        budget4: { mean: "11.60", std: "2.41" },
+        budget5: { mean: "13.20", std: "4.26" },
+        attackTime: ""
+      },
+      {
+        method: "Nettack",
+        budget1: { mean: "4.40", std: "2.53" },
+        budget2: { mean: "8.67", std: "3.75" },
+        budget3: { mean: "10.53", std: "4.17" },
+        budget4: { mean: "13.87", std: "4.69" },
+        budget5: { mean: "15.73", std: "3.69" },
+        attackTime: ""
+      },
+      {
+        method: "PGD",
+        budget1: { mean: "4.27", std: "2.12" },
+        budget2: { mean: "6.53", std: "3.25" },
+        budget3: { mean: "7.87", std: "3.16" },
+        budget4: { mean: "12.00", std: "3.02" },
+        budget5: { mean: "11.87", std: "4.17" },
+        attackTime: ""
+      },
+      {
+        method: "PR-BCD",
+        budget1: { mean: "5.60", std: "4.08" },
+        budget2: { mean: "9.60", std: "4.67" },
+        budget3: { mean: "13.33", std: "4.19" },
+        budget4: { mean: "16.67", std: "3.75" },
+        budget5: { mean: "18.40", std: "3.31" },
+        attackTime: ""
+      },
+      {
+        method: "SGA",
+        budget1: { mean: "4.93", std: "3.20" },
+        budget2: { mean: "8.00", std: "3.85" },
+        budget3: { mean: "8.27", std: "2.49" },
+        budget4: { mean: "11.33", std: "3.75" },
+        budget5: { mean: "12.53", std: "3.81" },
+        attackTime: ""
+      },
+      {
+        method: "GOttack",
+        budget1: { mean: "4.93", std: "3.10" },
+        budget2: { mean: "7.87", std: "3.66" },
+        budget3: { mean: "9.87", std: "3.66" },
+        budget4: { mean: "12.00", std: "3.21" },
+        budget5: { mean: "14.40", std: "3.64" },
+        attackTime: ""
+      }
+    ]
+  },
+  {
+    section: "Heterophily Results",
     dataset: "SQUIRREL",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 17,
-        budget2: 18.9,
-        budget3: 20.9,
-        budget4: 22.9,
-        budget5: 24.9,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "24.93", std: "33.09" },
+        budget2: { mean: "64.53", std: "6.91" },
+        budget3: { mean: "72.80", std: "7.36" },
+        budget4: { mean: "71.60", std: "5.67" },
+        budget5: { mean: "71.47", std: "4.56" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 42.4,
-        budget2: 47.4,
-        budget3: 52.4,
-        budget4: 57.4,
-        budget5: 62.4,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "62.40", std: "14.64" },
+        budget2: { mean: "65.87", std: "15.45" },
+        budget3: { mean: "71.07", std: "7.40" },
+        budget4: { mean: "71.07", std: "5.80" },
+        budget5: { mean: "71.60", std: "4.36" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 1.3,
-        budget2: 1.4,
-        budget3: 1.6,
-        budget4: 1.7,
-        budget5: 1.9,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "1.87", std: "3.34" },
+        budget2: { mean: "1.47", std: "2.77" },
+        budget3: { mean: "1.33", std: "1.63" },
+        budget4: { mean: "1.60", std: "2.29" },
+        budget5: { mean: "2.13", std: "2.20" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 32.5,
-        budget2: 36.3,
-        budget3: 40.1,
-        budget4: 43.9,
-        budget5: 47.7,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "47.73", std: "10.25" },
+        budget2: { mean: "58.93", std: "12.28" },
+        budget3: { mean: "65.87", std: "10.04" },
+        budget4: { mean: "62.80", std: "11.73" },
+        budget5: { mean: "64.80", std: "13.54" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 47.5,
-        budget2: 53.1,
-        budget3: 58.7,
-        budget4: 64.3,
-        budget5: 69.9,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "69.87", std: "10.76" },
+        budget2: { mean: "69.73", std: "6.41" },
+        budget3: { mean: "69.60", std: "6.56" },
+        budget4: { mean: "71.87", std: "4.63" },
+        budget5: { mean: "73.07", std: "5.12" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 35.4,
-        budget2: 39.5,
-        budget3: 43.7,
-        budget4: 47.8,
-        budget5: 52,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "52.00", std: "6.19" },
+        budget2: { mean: "59.20", std: "4.46" },
+        budget3: { mean: "60.53", std: "8.83" },
+        budget4: { mean: "65.07", std: "8.24" },
+        budget5: { mean: "66.80", std: "7.04" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 9.1,
-        budget2: 10.1,
-        budget3: 11.2,
-        budget4: 12.3,
-        budget5: 13.3,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "13.33", std: "4.64" },
+        budget2: { mean: "10.93", std: "5.55" },
+        budget3: { mean: "14.00", std: "6.05" },
+        budget4: { mean: "11.20", std: "5.85" },
+        budget5: { mean: "13.60", std: "5.46" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
+    section: "Heterophily Results",
     dataset: "SQUIRREL",
     victim: "GCN",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 23.6,
-        budget2: 26.3,
-        budget3: 29.1,
-        budget4: 31.9,
-        budget5: 34.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "34.67", std: "27.36" },
+        budget2: { mean: "66.80", std: "7.00" },
+        budget3: { mean: "73.87", std: "7.11" },
+        budget4: { mean: "71.47", std: "5.68" },
+        budget5: { mean: "71.47", std: "4.56" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 43.4,
-        budget2: 48.5,
-        budget3: 53.7,
-        budget4: 58.8,
-        budget5: 63.9,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "63.87", std: "12.25" },
+        budget2: { mean: "67.20", std: "12.85" },
+        budget3: { mean: "71.73", std: "6.23" },
+        budget4: { mean: "71.47", std: "6.02" },
+        budget5: { mean: "72.40", std: "4.01" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 1.9,
-        budget2: 2.1,
-        budget3: 2.4,
-        budget4: 2.6,
-        budget5: 2.8,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "2.80", std: "2.24" },
+        budget2: { mean: "1.87", std: "2.88" },
+        budget3: { mean: "2.00", std: "2.14" },
+        budget4: { mean: "2.00", std: "2.51" },
+        budget5: { mean: "2.27", std: "2.37" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 35.5,
-        budget2: 39.7,
-        budget3: 43.9,
-        budget4: 48.1,
-        budget5: 52.3,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "52.27", std: "8.21" },
+        budget2: { mean: "62.00", std: "10.25" },
+        budget3: { mean: "68.00", std: "7.82" },
+        budget4: { mean: "64.80", std: "9.85" },
+        budget5: { mean: "65.73", std: "12.21" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 47.8,
-        budget2: 53.4,
-        budget3: 59,
-        budget4: 64.6,
-        budget5: 70.3,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "70.27", std: "11.16" },
+        budget2: { mean: "70.67", std: "6.75" },
+        budget3: { mean: "70.67", std: "5.89" },
+        budget4: { mean: "72.67", std: "4.05" },
+        budget5: { mean: "74.27", std: "4.77" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 36.4,
-        budget2: 40.6,
-        budget3: 44.9,
-        budget4: 49.2,
-        budget5: 53.5,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "53.47", std: "5.97" },
+        budget2: { mean: "59.87", std: "4.98" },
+        budget3: { mean: "61.87", std: "8.53" },
+        budget4: { mean: "64.80", std: "8.55" },
+        budget5: { mean: "66.40", std: "7.14" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 9.2,
-        budget2: 10.3,
-        budget3: 11.4,
-        budget4: 12.5,
-        budget5: 13.6,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "13.60", std: "3.79" },
+        budget2: { mean: "12.13", std: "5.48" },
+        budget3: { mean: "13.47", std: "5.78" },
+        budget4: { mean: "12.00", std: "5.50" },
+        budget5: { mean: "13.60", std: "4.91" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
-    dataset: "SQUIRREL",
-    victim: "RUNG",
-    setting: "Evasion",
-    entries: [
-      {
-        method: "L1D-RND",
-        budget1: 1.4,
-        budget2: 1.6,
-        budget3: 1.8,
-        budget4: 2,
-        budget5: 2.1,
-        attackTime: "1.2 hrs"
-      },
-      {
-        method: "FGA",
-        budget1: 1.3,
-        budget2: 1.4,
-        budget3: 1.6,
-        budget4: 1.7,
-        budget5: 1.9,
-        attackTime: "2.8 hrs"
-      },
-      {
-        method: "Nettack",
-        budget1: 0.2,
-        budget2: 0.2,
-        budget3: 0.2,
-        budget4: 0.2,
-        budget5: 0.3,
-        attackTime: "3.5 hrs"
-      },
-      {
-        method: "PGD",
-        budget1: 1.4,
-        budget2: 1.5,
-        budget3: 1.7,
-        budget4: 1.8,
-        budget5: 2,
-        attackTime: "2.5 hrs"
-      },
-      {
-        method: "PR-BCD",
-        budget1: 1.2,
-        budget2: 1.3,
-        budget3: 1.5,
-        budget4: 1.6,
-        budget5: 1.7,
-        attackTime: "4.1 hrs"
-      },
-      {
-        method: "SGA",
-        budget1: 1.8,
-        budget2: 2,
-        budget3: 2.2,
-        budget4: 2.5,
-        budget5: 2.7,
-        attackTime: "3.0 hrs"
-      },
-      {
-        method: "GOttack",
-        budget1: 0.6,
-        budget2: 0.7,
-        budget3: 0.8,
-        budget4: 0.9,
-        budget5: 0.9,
-        attackTime: "2.3 hrs"
-      }
-    ]
-  },
-  {
-    section: "Heterophily Results (Table 3)",
-    dataset: "SQUIRREL",
-    victim: "RUNG",
-    setting: "Poisoning",
-    entries: [
-      {
-        method: "L1D-RND",
-        budget1: 7.7,
-        budget2: 8.6,
-        budget3: 9.5,
-        budget4: 10.4,
-        budget5: 11.3,
-        attackTime: "1.2 hrs"
-      },
-      {
-        method: "FGA",
-        budget1: 14,
-        budget2: 15.6,
-        budget3: 17.2,
-        budget4: 18.9,
-        budget5: 20.5,
-        attackTime: "2.8 hrs"
-      },
-      {
-        method: "Nettack",
-        budget1: 4.4,
-        budget2: 5,
-        budget3: 5.5,
-        budget4: 6,
-        budget5: 6.5,
-        attackTime: "3.5 hrs"
-      },
-      {
-        method: "PGD",
-        budget1: 11.8,
-        budget2: 13.2,
-        budget3: 14.6,
-        budget4: 15.9,
-        budget5: 17.3,
-        attackTime: "2.5 hrs"
-      },
-      {
-        method: "PR-BCD",
-        budget1: 10.2,
-        budget2: 11.5,
-        budget3: 12.7,
-        budget4: 13.9,
-        budget5: 15.1,
-        attackTime: "4.1 hrs"
-      },
-      {
-        method: "SGA",
-        budget1: 12.5,
-        budget2: 14,
-        budget3: 15.5,
-        budget4: 16.9,
-        budget5: 18.4,
-        attackTime: "3.0 hrs"
-      },
-      {
-        method: "GOttack",
-        budget1: 4.3,
-        budget2: 4.8,
-        budget3: 5.3,
-        budget4: 5.8,
-        budget5: 6.3,
-        attackTime: "2.3 hrs"
-      }
-    ]
-  },
-  {
-    section: "Heterophily Results (Table 3)",
+    section: "Heterophily Results",
     dataset: "CHAMELEON",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 14.9,
-        budget2: 16.6,
-        budget3: 18.4,
-        budget4: 20.1,
-        budget5: 21.9,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "21.87", std: "28.89" },
+        budget2: { mean: "50.93", std: "9.71" },
+        budget3: { mean: "62.00", std: "6.05" },
+        budget4: { mean: "66.67", std: "7.12" },
+        budget5: { mean: "66.53", std: "7.07" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 42.4,
-        budget2: 47.4,
-        budget3: 52.4,
-        budget4: 57.4,
-        budget5: 62.4,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "62.40", std: "7.72" },
+        budget2: { mean: "58.00", std: "12.72" },
+        budget3: { mean: "59.87", std: "15.97" },
+        budget4: { mean: "56.40", std: "12.54" },
+        budget5: { mean: "61.07", std: "12.30" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 2.1,
-        budget2: 2.3,
-        budget3: 2.6,
-        budget4: 2.8,
-        budget5: 3.1,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "3.07", std: "2.60" },
+        budget2: { mean: "5.47", std: "3.96" },
+        budget3: { mean: "4.93", std: "4.33" },
+        budget4: { mean: "6.27", std: "4.20" },
+        budget5: { mean: "6.27", std: "4.83" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 29.9,
-        budget2: 33.4,
-        budget3: 37,
-        budget4: 40.5,
-        budget5: 44,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "44.00", std: "20.95" },
+        budget2: { mean: "50.53", std: "18.10" },
+        budget3: { mean: "61.07", std: "14.64" },
+        budget4: { mean: "57.73", std: "15.47" },
+        budget5: { mean: "59.47", std: "14.05" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 39.4,
-        budget2: 44.1,
-        budget3: 48.7,
-        budget4: 53.4,
-        budget5: 58,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "58.00", std: "18.53" },
+        budget2: { mean: "67.87", std: "20.46" },
+        budget3: { mean: "70.27", std: "8.88" },
+        budget4: { mean: "67.07", std: "10.66" },
+        budget5: { mean: "73.47", std: "8.77" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 30.9,
-        budget2: 34.6,
-        budget3: 38.2,
-        budget4: 41.8,
-        budget5: 45.5,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "45.47", std: "10.38" },
+        budget2: { mean: "49.07", std: "9.82" },
+        budget3: { mean: "55.60", std: "7.64" },
+        budget4: { mean: "57.33", std: "9.37" },
+        budget5: { mean: "55.33", std: "6.70" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 16,
-        budget2: 17.8,
-        budget3: 19.7,
-        budget4: 21.6,
-        budget5: 23.5,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "23.47", std: "8.16" },
+        budget2: { mean: "19.20", std: "5.75" },
+        budget3: { mean: "22.53", std: "7.27" },
+        budget4: { mean: "17.33", std: "6.62" },
+        budget5: { mean: "22.80", std: "9.13" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
+    section: "Heterophily Results",
     dataset: "CHAMELEON",
     victim: "GCN",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 24.2,
-        budget2: 27.1,
-        budget3: 29.9,
-        budget4: 32.8,
-        budget5: 35.6,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "35.60", std: "22.31" },
+        budget2: { mean: "56.27", std: "9.85" },
+        budget3: { mean: "65.20", std: "5.89" },
+        budget4: { mean: "69.07", std: "7.44" },
+        budget5: { mean: "68.13", std: "5.88" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 45.2,
-        budget2: 50.5,
-        budget3: 55.8,
-        budget4: 61.1,
-        budget5: 66.4,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "66.40", std: "8.25" },
+        budget2: { mean: "61.47", std: "12.70" },
+        budget3: { mean: "62.13", std: "13.70" },
+        budget4: { mean: "60.53", std: "11.75" },
+        budget5: { mean: "63.07", std: "10.69" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 5.4,
-        budget2: 6,
-        budget3: 6.6,
-        budget4: 7.2,
-        budget5: 7.9,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "7.87", std: "4.98" },
+        budget2: { mean: "8.13", std: "2.56" },
+        budget3: { mean: "7.33", std: "5.49" },
+        budget4: { mean: "7.73", std: "3.77" },
+        budget5: { mean: "8.40", std: "5.72" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 36.4,
-        budget2: 40.6,
-        budget3: 44.9,
-        budget4: 49.2,
-        budget5: 53.5,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "53.47", std: "17.98" },
+        budget2: { mean: "56.80", std: "15.83" },
+        budget3: { mean: "64.13", std: "12.64" },
+        budget4: { mean: "61.87", std: "14.67" },
+        budget5: { mean: "60.53", std: "14.23" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 44.1,
-        budget2: 49.2,
-        budget3: 54.4,
-        budget4: 59.6,
-        budget5: 64.8,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "64.80", std: "14.69" },
+        budget2: { mean: "70.80", std: "14.89" },
+        budget3: { mean: "70.67", std: "8.54" },
+        budget4: { mean: "67.60", std: "7.57" },
+        budget5: { mean: "74.93", std: "6.63" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 35,
-        budget2: 39.1,
-        budget3: 43.2,
-        budget4: 47.4,
-        budget5: 51.5,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "51.47", std: "9.12" },
+        budget2: { mean: "54.67", std: "8.57" },
+        budget3: { mean: "60.13", std: "7.65" },
+        budget4: { mean: "61.87", std: "9.49" },
+        budget5: { mean: "59.07", std: "7.74" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 18.4,
-        budget2: 20.6,
-        budget3: 22.7,
-        budget4: 24.9,
-        budget5: 27.1,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "27.07", std: "8.48" },
+        budget2: { mean: "23.73", std: "5.65" },
+        budget3: { mean: "23.33", std: "7.16" },
+        budget4: { mean: "24.80", std: "7.04" },
+        budget5: { mean: "24.67", std: "7.81" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
+    section: "Heterophily Results",
+    dataset: "SQUIRREL",
+    victim: "RUNG",
+    setting: "Evasion",
+    entries: [
+      {
+        method: "L1D-RND",
+        budget1: { mean: "2.13", std: "1.77" },
+        budget2: { mean: "2.13", std: "2.77" },
+        budget3: { mean: "2.13", std: "2.20" },
+        budget4: { mean: "2.67", std: "2.58" },
+        budget5: { mean: "2.80", std: "2.48" },
+        attackTime: ""
+      },
+      {
+        method: "FGA",
+        budget1: { mean: "1.87", std: "2.88" },
+        budget2: { mean: "1.87", std: "2.20" },
+        budget3: { mean: "3.20", std: "3.36" },
+        budget4: { mean: "2.93", std: "2.25" },
+        budget5: { mean: "3.60", std: "2.53" },
+        attackTime: ""
+      },
+      {
+        method: "Nettack",
+        budget1: { mean: "0.27", std: "1.03" },
+        budget2: { mean: "0.80", std: "1.47" },
+        budget3: { mean: "1.33", std: "1.63" },
+        budget4: { mean: "1.47", std: "1.77" },
+        budget5: { mean: "1.60", std: "1.72" },
+        attackTime: ""
+      },
+      {
+        method: "PGD",
+        budget1: { mean: "2.00", std: "1.85" },
+        budget2: { mean: "2.67", std: "2.89" },
+        budget3: { mean: "4.40", std: "2.85" },
+        budget4: { mean: "4.67", std: "2.99" },
+        budget5: { mean: "4.93", std: "3.10" },
+        attackTime: ""
+      },
+      {
+        method: "PR-BCD",
+        budget1: { mean: "1.73", std: "2.49" },
+        budget2: { mean: "2.67", std: "2.47" },
+        budget3: { mean: "3.20", std: "2.60" },
+        budget4: { mean: "2.27", std: "2.12" },
+        budget5: { mean: "3.33", std: "3.09" },
+        attackTime: ""
+      },
+      {
+        method: "SGA",
+        budget1: { mean: "2.67", std: "3.68" },
+        budget2: { mean: "3.47", std: "4.17" },
+        budget3: { mean: "5.07", std: "4.77" },
+        budget4: { mean: "5.07", std: "4.59" },
+        budget5: { mean: "5.60", std: "4.15" },
+        attackTime: ""
+      },
+      {
+        method: "GOttack",
+        budget1: { mean: "0.93", std: "2.25" },
+        budget2: { mean: "0.93", std: "1.83" },
+        budget3: { mean: "1.73", std: "2.71" },
+        budget4: { mean: "1.47", std: "2.07" },
+        budget5: { mean: "2.00", std: "2.83" },
+        attackTime: ""
+      }
+    ]
+  },
+  {
+    section: "Heterophily Results",
+    dataset: "SQUIRREL",
+    victim: "RUNG",
+    setting: "Poisoning",
+    entries: [
+      {
+        method: "L1D-RND",
+        budget1: { mean: "11.33", std: "8.64" },
+        budget2: { mean: "16.13", std: "8.26" },
+        budget3: { mean: "17.07", std: "8.94" },
+        budget4: { mean: "18.67", std: "8.02" },
+        budget5: { mean: "19.33", std: "8.09" },
+        attackTime: ""
+      },
+      {
+        method: "FGA",
+        budget1: { mean: "20.53", std: "9.69" },
+        budget2: { mean: "24.67", std: "10.27" },
+        budget3: { mean: "29.47", std: "7.23" },
+        budget4: { mean: "28.53", std: "9.21" },
+        budget5: { mean: "28.67", std: "10.63" },
+        attackTime: ""
+      },
+      {
+        method: "Nettack",
+        budget1: { mean: "6.53", std: "4.44" },
+        budget2: { mean: "6.93", std: "5.18" },
+        budget3: { mean: "6.53", std: "4.81" },
+        budget4: { mean: "6.93", std: "4.83" },
+        budget5: { mean: "6.80", std: "4.26" },
+        attackTime: ""
+      },
+      {
+        method: "PGD",
+        budget1: { mean: "17.33", std: "7.81" },
+        budget2: { mean: "23.20", std: "9.91" },
+        budget3: { mean: "26.40", std: "9.05" },
+        budget4: { mean: "27.07", std: "6.23" },
+        budget5: { mean: "27.87", std: "8.63" },
+        attackTime: ""
+      },
+      {
+        method: "PR-BCD",
+        budget1: { mean: "15.07", std: "6.18" },
+        budget2: { mean: "19.47", std: "7.31" },
+        budget3: { mean: "19.20", std: "6.84" },
+        budget4: { mean: "20.67", std: "7.73" },
+        budget5: { mean: "20.53", std: "6.99" },
+        attackTime: ""
+      },
+      {
+        method: "SGA",
+        budget1: { mean: "18.40", std: "9.33" },
+        budget2: { mean: "22.27", std: "8.78" },
+        budget3: { mean: "26.27", std: "8.61" },
+        budget4: { mean: "26.93", std: "10.63" },
+        budget5: { mean: "27.73", std: "10.11" },
+        attackTime: ""
+      },
+      {
+        method: "GOttack",
+        budget1: { mean: "6.27", std: "5.18" },
+        budget2: { mean: "6.93", std: "6.23" },
+        budget3: { mean: "8.00", std: "5.66" },
+        budget4: { mean: "7.60", std: "5.62" },
+        budget5: { mean: "9.20", std: "6.58" },
+        attackTime: ""
+      }
+    ]
+  },
+  {
+    section: "Heterophily Results",
     dataset: "CHAMELEON",
     victim: "RUNG",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 1.5,
-        budget2: 1.7,
-        budget3: 1.9,
-        budget4: 2.1,
-        budget5: 2.3,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "2.27", std: "3.28" },
+        budget2: { mean: "2.27", std: "5.18" },
+        budget3: { mean: "3.47", std: "6.61" },
+        budget4: { mean: "4.53", std: "6.65" },
+        budget5: { mean: "5.07", std: "7.17" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 0.6,
-        budget2: 0.7,
-        budget3: 0.8,
-        budget4: 0.9,
-        budget5: 0.9,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "0.93", std: "1.83" },
+        budget2: { mean: "2.27", std: "3.69" },
+        budget3: { mean: "2.53", std: "3.58" },
+        budget4: { mean: "3.33", std: "5.22" },
+        budget5: { mean: "4.13", std: "5.37" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 0.2,
-        budget2: 0.2,
-        budget3: 0.2,
-        budget4: 0.2,
-        budget5: 0.3,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "0.27", std: "0.70" },
+        budget2: { mean: "0.67", std: "1.23" },
+        budget3: { mean: "0.53", std: "1.19" },
+        budget4: { mean: "0.93", std: "1.83" },
+        budget5: { mean: "1.33", std: "2.23" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 1.3,
-        budget2: 1.4,
-        budget3: 1.6,
-        budget4: 1.7,
-        budget5: 1.9,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "1.87", std: "4.69" },
+        budget2: { mean: "2.00", std: "3.02" },
+        budget3: { mean: "1.60", std: "2.03" },
+        budget4: { mean: "3.20", std: "4.71" },
+        budget5: { mean: "3.47", std: "5.93" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 0.5,
-        budget2: 0.6,
-        budget3: 0.7,
-        budget4: 0.7,
-        budget5: 0.8,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "0.80", std: "2.24" },
+        budget2: { mean: "1.87", std: "3.58" },
+        budget3: { mean: "1.87", std: "3.96" },
+        budget4: { mean: "2.40", std: "3.87" },
+        budget5: { mean: "3.20", std: "5.65" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 1.4,
-        budget2: 1.6,
-        budget3: 1.8,
-        budget4: 2,
-        budget5: 2.1,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "2.13", std: "4.31" },
+        budget2: { mean: "2.93", std: "4.95" },
+        budget3: { mean: "3.20", std: "3.61" },
+        budget4: { mean: "5.60", std: "7.38" },
+        budget5: { mean: "4.40", std: "6.47" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 0.5,
-        budget2: 0.5,
-        budget3: 0.6,
-        budget4: 0.6,
-        budget5: 0.7,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "0.67", std: "1.23" },
+        budget2: { mean: "1.33", std: "2.09" },
+        budget3: { mean: "1.60", std: "2.16" },
+        budget4: { mean: "1.87", std: "3.25" },
+        budget5: { mean: "3.47", std: "5.04" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Heterophily Results (Table 3)",
+    section: "Heterophily Results",
     dataset: "CHAMELEON",
     victim: "RUNG",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 8.2,
-        budget2: 9.1,
-        budget3: 10.1,
-        budget4: 11,
-        budget5: 12,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "12.00", std: "8.88" },
+        budget2: { mean: "21.33", std: "12.30" },
+        budget3: { mean: "24.00", std: "10.61" },
+        budget4: { mean: "28.00", std: "13.96" },
+        budget5: { mean: "32.40", std: "14.35" },
+        attackTime: ""
       },
       {
         method: "FGA",
-        budget1: 11.2,
-        budget2: 12.5,
-        budget3: 13.8,
-        budget4: 15.1,
-        budget5: 16.4,
-        attackTime: "2.8 hrs"
+        budget1: { mean: "16.40", std: "7.53" },
+        budget2: { mean: "17.47", std: "12.06" },
+        budget3: { mean: "17.20", std: "7.70" },
+        budget4: { mean: "18.80", std: "10.77" },
+        budget5: { mean: "19.20", std: "11.18" },
+        attackTime: ""
       },
       {
         method: "Nettack",
-        budget1: 5,
-        budget2: 5.6,
-        budget3: 6.2,
-        budget4: 6.7,
-        budget5: 7.3,
-        attackTime: "3.5 hrs"
+        budget1: { mean: "7.33", std: "2.89" },
+        budget2: { mean: "6.67", std: "2.89" },
+        budget3: { mean: "7.07", std: "3.61" },
+        budget4: { mean: "6.93", std: "4.06" },
+        budget5: { mean: "7.47", std: "3.34" },
+        attackTime: ""
       },
       {
         method: "PGD",
-        budget1: 9.3,
-        budget2: 10.4,
-        budget3: 11.5,
-        budget4: 12.6,
-        budget5: 13.7,
-        attackTime: "2.5 hrs"
+        budget1: { mean: "13.73", std: "6.41" },
+        budget2: { mean: "18.40", std: "7.64" },
+        budget3: { mean: "19.20", std: "8.94" },
+        budget4: { mean: "20.00", std: "9.80" },
+        budget5: { mean: "19.60", std: "11.76" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 8,
-        budget2: 8.9,
-        budget3: 9.9,
-        budget4: 10.8,
-        budget5: 11.7,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "11.73", std: "5.90" },
+        budget2: { mean: "14.40", std: "6.15" },
+        budget3: { mean: "13.87", std: "7.87" },
+        budget4: { mean: "14.53", std: "5.42" },
+        budget5: { mean: "15.73", std: "6.45" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 9.7,
-        budget2: 10.8,
-        budget3: 12,
-        budget4: 13.1,
-        budget5: 14.3,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "14.27", std: "6.76" },
+        budget2: { mean: "15.07", std: "5.23" },
+        budget3: { mean: "20.40", std: "7.41" },
+        budget4: { mean: "19.60", std: "7.97" },
+        budget5: { mean: "18.00", std: "6.46" },
+        attackTime: ""
       },
       {
         method: "GOttack",
-        budget1: 7.3,
-        budget2: 8.2,
-        budget3: 9.1,
-        budget4: 9.9,
-        budget5: 10.8,
-        attackTime: "2.3 hrs"
+        budget1: { mean: "10.80", std: "4.89" },
+        budget2: { mean: "8.27", std: "5.80" },
+        budget3: { mean: "9.20", std: "3.69" },
+        budget4: { mean: "10.53", std: "3.42" },
+        budget5: { mean: "12.53", std: "6.35" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Large-Scale Results (Table 4)",
+    section: "Large-Scale Results",
     dataset: "OGB-ARXIV",
     victim: "GCN",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 16,
-        budget2: 30.7,
-        budget3: 36,
-        budget4: 38,
-        budget5: 36.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "16.00", std: "2.00" },
+        budget2: { mean: "30.67", std: "7.02" },
+        budget3: { mean: "36.00", std: "2.00" },
+        budget4: { mean: "38.00", std: "2.00" },
+        budget5: { mean: "36.67", std: "3.06" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 23.3,
-        budget2: 34,
-        budget3: 38,
-        budget4: 40.7,
-        budget5: 39.3,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "23.33", std: "3.06" },
+        budget2: { mean: "34.00", std: "3.46" },
+        budget3: { mean: "38.00", std: "2.00" },
+        budget4: { mean: "40.67", std: "3.06" },
+        budget5: { mean: "39.33", std: "1.15" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 36.7,
-        budget2: 48.7,
-        budget3: 56,
-        budget4: 57.3,
-        budget5: 58.7,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "36.67", std: "5.03" },
+        budget2: { mean: "48.67", std: "7.02" },
+        budget3: { mean: "56.00", std: "2.00" },
+        budget4: { mean: "57.33", std: "1.15" },
+        budget5: { mean: "58.67", std: "1.15" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Large-Scale Results (Table 4)",
+    section: "Large-Scale Results",
+    dataset: "OGB-ARXIV",
+    victim: "GCN",
+    setting: "Poisoning",
+    entries: [
+      {
+        method: "L1D-RND",
+        budget1: { mean: "17.33", std: "4.16" },
+        budget2: { mean: "32.00", std: "6.00" },
+        budget3: { mean: "38.00", std: "2.00" },
+        budget4: { mean: "39.33", std: "1.15" },
+        budget5: { mean: "38.67", std: "2.31" },
+        attackTime: ""
+      },
+      {
+        method: "PR-BCD",
+        budget1: { mean: "22.00", std: "5.29" },
+        budget2: { mean: "34.67", std: "3.06" },
+        budget3: { mean: "36.67", std: "1.15" },
+        budget4: { mean: "40.67", std: "5.03" },
+        budget5: { mean: "39.33", std: "1.15" },
+        attackTime: ""
+      },
+      {
+        method: "SGA",
+        budget1: { mean: "36.67", std: "2.31" },
+        budget2: { mean: "48.67", std: "8.08" },
+        budget3: { mean: "56.00", std: "2.00" },
+        budget4: { mean: "57.33", std: "1.15" },
+        budget5: { mean: "58.67", std: "1.15" },
+        attackTime: ""
+      }
+    ]
+  },
+  {
+    section: "Large-Scale Results",
     dataset: "OGB-ARXIV",
     victim: "GSAGE",
     setting: "Evasion",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 16.7,
-        budget2: 27.3,
-        budget3: 33.3,
-        budget4: 29.3,
-        budget5: 34.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "16.67", std: "8.08" },
+        budget2: { mean: "27.33", std: "7.02" },
+        budget3: { mean: "33.33", std: "7.57" },
+        budget4: { mean: "29.33", std: "9.45" },
+        budget5: { mean: "34.67", std: "7.02" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 20.7,
-        budget2: 24.7,
-        budget3: 22,
-        budget4: 24.7,
-        budget5: 28,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "20.67", std: "1.15" },
+        budget2: { mean: "24.67", std: "1.15" },
+        budget3: { mean: "22.00", std: "3.46" },
+        budget4: { mean: "24.67", std: "3.06" },
+        budget5: { mean: "28.00", std: "2.00" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 40.7,
-        budget2: 56,
-        budget3: 63.3,
-        budget4: 72,
-        budget5: 71.3,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "40.67", std: "2.31" },
+        budget2: { mean: "56.00", std: "10.00" },
+        budget3: { mean: "63.33", std: "4.16" },
+        budget4: { mean: "72.00", std: "7.21" },
+        budget5: { mean: "71.33", std: "5.77" },
+        attackTime: ""
       }
     ]
   },
   {
-    section: "Large-Scale Results (Table 4)",
-    dataset: "OGB-ARXIV",
-    victim: "GCN",
-    setting: "Poisoning",
-    entries: [
-      {
-        method: "L1D-RND",
-        budget1: 17.3,
-        budget2: 32,
-        budget3: 38,
-        budget4: 39.3,
-        budget5: 38.7,
-        attackTime: "1.2 hrs"
-      },
-      {
-        method: "PR-BCD",
-        budget1: 22,
-        budget2: 34.7,
-        budget3: 36.7,
-        budget4: 40.7,
-        budget5: 39.3,
-        attackTime: "4.1 hrs"
-      },
-      {
-        method: "SGA",
-        budget1: 36.7,
-        budget2: 48.7,
-        budget3: 56,
-        budget4: 57.3,
-        budget5: 58.7,
-        attackTime: "3.0 hrs"
-      }
-    ]
-  },
-  {
-    section: "Large-Scale Results (Table 4)",
+    section: "Large-Scale Results",
     dataset: "OGB-ARXIV",
     victim: "GSAGE",
     setting: "Poisoning",
     entries: [
       {
         method: "L1D-RND",
-        budget1: 17.3,
-        budget2: 26,
-        budget3: 30,
-        budget4: 31.3,
-        budget5: 34.7,
-        attackTime: "1.2 hrs"
+        budget1: { mean: "17.33", std: "5.03" },
+        budget2: { mean: "26.00", std: "3.46" },
+        budget3: { mean: "30.00", std: "14.00" },
+        budget4: { mean: "31.33", std: "6.43" },
+        budget5: { mean: "34.67", std: "7.02" },
+        attackTime: ""
       },
       {
         method: "PR-BCD",
-        budget1: 17.3,
-        budget2: 24,
-        budget3: 19.3,
-        budget4: 26,
-        budget5: 26,
-        attackTime: "4.1 hrs"
+        budget1: { mean: "17.33", std: "3.06" },
+        budget2: { mean: "24.00", std: "2.00" },
+        budget3: { mean: "19.33", std: "3.06" },
+        budget4: { mean: "26.00", std: "2.00" },
+        budget5: { mean: "26.00", std: "2.00" },
+        attackTime: ""
       },
       {
         method: "SGA",
-        budget1: 40,
-        budget2: 60,
-        budget3: 61.3,
-        budget4: 70.7,
-        budget5: 74.7,
-        attackTime: "3.0 hrs"
+        budget1: { mean: "40.00", std: "3.46" },
+        budget2: { mean: "60.00", std: "8.00" },
+        budget3: { mean: "61.33", std: "5.77" },
+        budget4: { mean: "70.67", std: "5.03" },
+        budget5: { mean: "74.67", std: "8.08" },
+        attackTime: ""
       }
     ]
   }

@@ -19,7 +19,6 @@ PAGE_DIRS = {
     "leaderboard": "leaderboard",
     "models": "models",
     "datasets": "datasets",
-    "results": "results",
     "about": "about",
 }
 
@@ -37,7 +36,6 @@ def rewrite_text(text: str, *, is_under_assets_js: bool) -> str:
         (r'href="/methodology/?"', 'href="index.html"'),
         (r'href="/models/?"', 'href="models.html"'),
         (r'href="/datasets/?"', 'href="datasets.html"'),
-        (r'href="/results/?"', 'href="results.html"'),
         (r'href="/leaderboard/?"', 'href="leaderboard.html"'),
         (r'href="/about/?"', 'href="about.html"'),
     ]
@@ -49,7 +47,6 @@ def rewrite_text(text: str, *, is_under_assets_js: bool) -> str:
         ('href: "/methodology/"', 'href: "index.html"'),
         ('href: "/models/"', 'href: "models.html"'),
         ('href: "/datasets/"', 'href: "datasets.html"'),
-        ('href: "/results/"', 'href: "results.html"'),
         ('href: "/leaderboard/"', 'href: "leaderboard.html"'),
         ('href: "/about/"', 'href: "about.html"'),
     ]
@@ -109,7 +106,7 @@ def main() -> int:
 
     # Static dirs / files
     shutil.copytree(SITE / "assets", DEPLOY / "assets")
-    for extra in ("favicon.ico", "feed.xml", "robots.txt"):
+    for extra in ("favicon.svg", "feed.xml", "robots.txt"):
         p = SITE / extra
         if p.is_file():
             shutil.copy2(p, DEPLOY / extra)
