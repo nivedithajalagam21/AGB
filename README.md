@@ -1,158 +1,104 @@
-# Jekyll Doc Theme
+# Adversarial Graph Benchmark (AGB) Website
 
-Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
+Static marketing and benchmark site for the Adversarial Graph Benchmark. Built with [Jekyll](https://jekyllrb.com/) (Ruby); production output is a fully static folder suitable for cPanel, SFTP, Git-based deploy, or any static host.
 
-## Running locally
+There is **no** Node server, SSR, or API layer in production.
 
-You need Ruby and gem before starting, then:
+## Requirements
+
+- **Ruby** 2.7+ (3.x recommended)
+- **Bundler** (`gem install bundler`)
+- **Python** 3.8+ (post-process step only; stdlib only)
+- **npm** (optional convenience wrapper for `npm run build`)
+
+## Installation
 
 ```bash
-# install bundler
-gem install bundler
+git clone <your-repo-url>
+cd AGB-WEB
 
-# clone the project
-git clone https://github.com/aksakalli/jekyll-doc-theme.git
-cd jekyll-doc-theme
-
-# install dependencies
 bundle install
+npm install   # optional; no runtime npm dependencies
+```
 
-## run jekyll with dependencies
+Configure site metadata in `_config.yml` before deploying (at minimum `url`, `git_address`, and `paper_address`).
+
+## Local development
+
+```bash
 bundle exec jekyll serve
 ```
 
-### Theme Assets
+Open http://127.0.0.1:4000/ (Jekyll default). Pages use directory-style URLs (e.g. `/leaderboard/`).
 
-As of the move to support [Github Pages](https://pages.github.com/) a number of files have been relocated to the `/asset` folder.
-- css/
-- fonts/
-- img/
-- js/
-- 404.html
-- allposts.html
-- search.json
+## Production build
 
-## Docker
-
-Alternatively, you can deploy it using the multi-stage [Dockerfile](Dockerfile)
-that serves files from Nginx for better performance in production.
-
-Build the image for your site's `JEKYLL_BASEURL`:
-
-```
-docker build --build-arg JEKYLL_BASEURL="/your-base/url" -t jekyll-doc-theme .
+```bash
+npm run build
 ```
 
-(or leave it empty for root: `JEKYLL_BASEURL=""`) and serve it:
+Equivalent:
 
-```
-docker run -p 8080:80 jekyll-doc-theme
-```
-
-## Github Pages
-
-The theme is also available to [Github Pages](https://pages.github.com/) by making use of the [Remote Theme](https://github.com/benbalter/jekyll-remote-theme) plugin:
-
-**Gemfile**
-```
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-gem "github-pages", group: :jekyll_plugins
+```bash
+bundle exec jekyll build
+python3 scripts/prepare-static-deploy.py
 ```
 
-**_config.yml**
-```
-# Configure the remote_theme plugin with the gh-pages branch
-# or the specific tag
-remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
-```
+**Output folder:** `dist/`
 
-### Theme Assets
+Contents are static only: HTML, CSS, JS, images, fonts, `favicon.svg`, `feed.xml`, and `robots.txt` when present. Nav pages are flat files at the root (`index.html`, `challenge.html`, `datasets.html`, etc.) with relative asset paths for root hosting on cPanel.
 
-Files from your project will override any theme file with the same name.  For example, the most comment use case for this, would be to modify your sites theme or colors.   To do this, the following steps should be taken:
+### Main routes (after build)
 
-1) Copy the contents of the `aksakalli/jekyll-doc-theme/asset/css/main.scss` to your own project (maintaining folder structure)
-2) Modify the variables you wish to use prior to the import statements, for example:
+| Page | File in `dist/` |
+|------|-----------------|
+| Home | `index.html` |
+| AGB Challenge | `challenge.html` |
+| Datasets | `datasets.html` |
+| Leaderboard | `leaderboard.html` |
+| Paper | `paper.html` |
+| Team | `team.html` |
+| GitHub | External link (`git_address` in `_config.yml`) |
 
-```
-// Bootstrap variable overrides
-$grid-gutter-width: 30px !default;
-$container-desktop: (900px + $grid-gutter-width) !default;
-$container-large-desktop: (900px + $grid-gutter-width) !default;
+Preview locally:
 
-@import // Original import statement
-  {% if site.bootwatch %}
-    "bootswatch/{{site.bootwatch | downcase}}/variables",
-  {% endif %}
-
-  "bootstrap",
-
-  {% if site.bootwatch %}
-    "bootswatch/{{site.bootwatch | downcase}}/bootswatch",
-  {% endif %}
-
-  "syntax-highlighting",
-  "typeahead",
-  "jekyll-doc-theme"
-;
-
-// More custom overrides.
+```bash
+npx --yes serve dist
+# or: python3 -m http.server 8080 --directory dist
 ```
 
-3) Import or override any other theme styles after the standard imports
+## Deployment
 
-## Projects using Jekyll Doc Theme
+### Git-based (cPanel / static host)
 
-* http://teavm.org/
-* https://su2code.github.io/
-* https://launchany.github.io/mvd-template/
-* https://knowit.github.io/kubernetes-workshop/
-* https://rec.danmuji.org/
-* https://nethesis.github.io/icaro/
-* http://ai.cs.ucl.ac.uk/
-* http://tizonia.org
-* https://lakka-switch.github.io/documentation/
-* https://cs.anu.edu.au/cybersec/issisp2018/
-* http://www.channotation.org/
-* http://nemo.apache.org/
-* https://csuf-acm.github.io/
-* https://extemporelang.github.io/
-* https://media-ed-online.github.io/intro-web-dev-2018spr/
-* https://midlevel.github.io/MLAPI/
-* https://pulp-platform.github.io/ariane/docs/home/
-* https://koopjs.github.io/
-* https://developer.apiture.com/
-* https://contextmapper.github.io/
-* https://www.bruttin.com/CosmosDbExplorer/
-* http://mosaic-lopow.github.io/dash7-ap-open-source-stack/
-* http://www.vstream.ml/
-* http://docs.fronthack.com/
-* https://repaircafeportsmouth.org.uk/
-* http://brotherskeeperkenya.com/
-* https://hschne.at/Fluentast/
-* https://zoe-analytics.eu/
-* https://uli.kmz-brno.cz/
-* https://lime.software/
-* https://weft.aka.farm
-* https://microros.github.io/
-* https://citystoriesucla.github.io/citystories-LA-docs
-* http://lessrt.org/
-* http://kivik.io/
-* https://www.iot-kit.nl/
-* http://justindietz.com/
-* https://universalsplitscreen.github.io/
-* https://docs.oneflowcloud.com/
-* https://actlist.silentsoft.org/
-* https://teevid.github.io
-* https://developer.ipums.org
-* https://osmpersia.github.io (right-to-left)
-* https://ecmlpkdd2019.org
-* https://idle.land
-* https://mqless.com
-* https://muict-seru.github.io/
-* https://www.invoice-x.org
-* https://www.devops.geek.nz
+1. Run `npm run build` locally or in CI.
+2. Upload **only** the contents of `dist/` to the web root (`public_html` or equivalent).
+3. Do **not** upload `node_modules/`, `_site/`, source Ruby files, or `.env` files.
+4. Update `_config.yml` `url` to your live domain and rebuild so feed/SEO tags are correct.
+
+### SFTP
+
+1. Build locally: `npm run build`.
+2. SFTP into `public_html` (or your docroot).
+3. Sync `dist/` → remote docroot (overwrite old files).
+4. Confirm `index.html` loads and nav links open the correct `.html` pages.
+
+### What not to commit
+
+- `dist/`, `_site/`, `node_modules/`
+- `.env`, `.env.local`
+- `agb.zip` or other deployment archives
+- API keys, credentials, or local-only data files
+
+## Project layout (source)
+
+| Path | Purpose |
+|------|---------|
+| `*.html`, `_includes/`, `_layouts/` | Jekyll pages and templates |
+| `assets/` | SCSS, JS modules, images, fonts, data |
+| `_config.yml` | Site configuration |
+| `scripts/prepare-static-deploy.py` | Flat `dist/` export + relative URL rewrite |
 
 ## License
 
-Released under [the MIT license](LICENSE).
+See `LICENSE` in the repository.

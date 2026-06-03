@@ -1,4 +1,4 @@
-import { pageHeader } from "./components.js";
+import { initPageEffects, pageHeader, pageWrap } from "./components.js";
 
 const sections = [
   {
@@ -66,7 +66,7 @@ if (root) {
   const sectionHtml = sections
     .map(
       (section, index) => `
-    <section class="agb-challenge-section${index > 0 ? " agb-challenge-section-divider" : ""}" id="${section.id}">
+    <section class="agb-challenge-section${index > 0 ? " agb-challenge-section-divider" : ""} agb-page-reveal" id="${section.id}">
       <h2 class="agb-challenge-section-title agb-section-heading">
         <i class="fa ${section.icon} agb-section-icon" aria-hidden="true"></i>
         <span>${section.title}</span>
@@ -82,17 +82,22 @@ if (root) {
     )
     .join("");
 
-  root.innerHTML = `
-    <div class="agb-challenge-page">
-      ${pageHeader({
-        title: "AGB Challenge",
-        subtitle: "Fair and standardized evaluation of adversarial graph neural networks"
-      })}
+  root.innerHTML = pageWrap({
+    theme: "challenge",
+    className: "agb-challenge-page",
+    hero: pageHeader({
+      theme: "challenge",
+      title: "AGB Challenge",
+      subtitle: "Fair and standardized evaluation of adversarial graph neural networks"
+    }),
+    body: `
       <div class="container agb-challenge-shell">
-        <div class="agb-challenge-container">
+        <div class="agb-challenge-container agb-page-reveal">
           ${sectionHtml}
         </div>
       </div>
-    </div>
-  `;
+    `
+  });
+
+  initPageEffects(root);
 }

@@ -1,0 +1,11 @@
+{
+  "name": "agb-web",
+  "private": true,
+  "description": "Adversarial Graph Benchmark static site (Jekyll)",
+  "scripts": {
+    "build": "bundle exec jekyll build && python3 scripts/prepare-static-deploy.py",
+    "jekyll:build": "bundle exec jekyll build",
+    "jekyll:serve": "bundle exec jekyll serve",
+    "postinstall": "echo \"Ruby/Bundler required: run bundle install before npm run build\""
+  }
+}

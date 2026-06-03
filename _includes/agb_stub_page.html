@@ -1,11 +1,32 @@
-<section class="agb-section agb-static-page">
-  <div class="container agb-page-shell">
-    <div class="agb-content-card agb-content-card--padded">
-      <h1 class="agb-static-page-title">
-        <i class="fa fa-users agb-section-icon" aria-hidden="true"></i>
+<div class="agb-page agb-page--team agb-page--decor-light">
+  <div class="agb-page-bg" aria-hidden="true">
+    <span class="agb-page-glow agb-page-glow--team"></span>
+    <span class="agb-page-dots agb-page-dots--tr"></span>
+    <svg class="agb-page-network" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+      <line class="agb-page-net-line" x1="60" y1="320" x2="220" y2="120" />
+      <line class="agb-page-net-line" x1="220" y1="120" x2="420" y2="280" />
+      <line class="agb-page-net-line agb-page-net-line--faint" x1="140" y1="240" x2="560" y2="160" />
+      <circle class="agb-page-net-node" cx="220" cy="120" r="4" />
+      <circle class="agb-page-net-node" cx="420" cy="280" r="4" />
+    </svg>
+    <span class="agb-page-particle agb-page-particle--1"></span>
+    <span class="agb-page-particle agb-page-particle--2"></span>
+    <span class="agb-page-team-link agb-page-team-link--1" aria-hidden="true"></span>
+    <span class="agb-page-float-node agb-page-float-node--1"></span>
+  </div>
+
+  <header class="agb-page-hero agb-page-hero--team agb-page-reveal">
+    <span class="agb-page-hero-glow" aria-hidden="true"></span>
+    <div class="container agb-page-hero-inner">
+      <h1 class="agb-page-hero-title">
+        <i class="fa fa-users agb-page-hero-title-icon" aria-hidden="true"></i>
         <span>{{ include.title }}</span>
       </h1>
-      <p class="agb-body-text agb-static-page-lead">{{ include.lead }}</p>
+      <p class="agb-page-hero-subtitle">{{ include.lead }}</p>
     </div>
-  </div>
-</section>
+  </header>
+</div>
+<script type="module">
+  import { initPageEffects } from "{{ '/assets/js/components.js' | relative_url }}";
+  initPageEffects(document.querySelector(".agb-page--team"));
+</script>

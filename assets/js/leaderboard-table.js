@@ -181,7 +181,13 @@ export function renderLeaderboardTable(entries, { caption = "" } = {}) {
         const value = col.key === "rank" ? entry.rank : entry[col.key];
         const blankIfEmpty = col.key === "attackTime";
         const budgetClass = col.budget ? " agb-lb-budget-col" : "";
-        return `<td class="agb-lb-col-${col.key} ${align}${budgetClass}">${formatCell(value, col, { blankIfEmpty })}</td>`;
+        let rankClass = "";
+        if (col.key === "rank") {
+          if (entry.rank === 1) rankClass = " agb-lb-rank--gold";
+          else if (entry.rank === 2) rankClass = " agb-lb-rank--silver";
+          else if (entry.rank === 3) rankClass = " agb-lb-rank--bronze";
+        }
+        return `<td class="agb-lb-col-${col.key} ${align}${budgetClass}${rankClass}">${formatCell(value, col, { blankIfEmpty })}</td>`;
       }).join("");
       const bestClass = entry.method === bestMethod ? "is-best" : "";
       return `<tr class="${bestClass}">${cells}</tr>`;

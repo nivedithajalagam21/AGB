@@ -28,6 +28,11 @@ plugins:
 exclude:
   - data/
   - deploy/
+  - dist/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - scripts/
   - agb.zip
   - Gemfile
   - Gemfile.lock

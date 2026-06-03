@@ -1,6 +1,12 @@
 _site/
-**.npz
-**.txt
+dist/
+deploy/
+node_modules/
+.next/
+.env
+.env.local
 .DS_Store
+agb.zip
+**.npz
 **.ipynb
 **.pptx

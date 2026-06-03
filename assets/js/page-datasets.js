@@ -3,6 +3,11 @@ import {
   datasetCategories,
   datasetsHero
 } from "../data/datasets.js";
+import {
+  initPageEffects,
+  pageHeader,
+  pageWrap
+} from "./components.js";
 
 function formatCount(n) {
   return typeof n === "number" ? n.toLocaleString() : "—";
@@ -119,7 +124,7 @@ if (root) {
     .map((section) => {
       const rows = filterDatasets(section.type);
       return `
-    <section class="agb-datasets-section agb-datasets-section-divider" id="${section.id}">
+    <section class="agb-datasets-section agb-datasets-section-divider agb-page-reveal" id="${section.id}">
       ${renderSectionTitle(section.title, section.icon)}
       <p class="agb-datasets-section-lead">${section.lead}</p>
       <p class="agb-datasets-section-datasets">${section.datasetsLabel}</p>
@@ -130,17 +135,17 @@ if (root) {
     })
     .join("");
 
-  root.innerHTML = `
-    <div class="agb-datasets-page">
-      <section class="agb-datasets-hero">
-        <div class="container agb-datasets-container">
-          <h1 class="agb-datasets-hero-title">${datasetsHero.title}</h1>
-          <p class="agb-datasets-hero-subtitle">${datasetsHero.subtitle}</p>
-        </div>
-      </section>
-
+  root.innerHTML = pageWrap({
+    theme: "datasets",
+    className: "agb-datasets-page",
+    hero: pageHeader({
+      theme: "datasets",
+      title: datasetsHero.title,
+      subtitle: datasetsHero.subtitle
+    }),
+    body: `
       <div class="container agb-page-shell">
-        <div class="agb-content-card agb-content-card--sections">
+        <div class="agb-content-card agb-content-card--sections agb-page-reveal">
           <section class="agb-datasets-section" id="overview">
             ${renderSectionTitle("Overview", "fa-info-circle")}
             <p class="agb-datasets-section-lead">${datasetsHero.paragraph}</p>
@@ -153,6 +158,8 @@ if (root) {
           ${categoryHtml}
         </div>
       </div>
-    </div>
-  `;
+    `
+  });
+
+  initPageEffects(root);
 }

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Virginia Tech">
+  <path fill="#861f41" d="M60 8 L108 28 V72 C108 92 86 108 60 112 C34 108 12 92 12 72 V28 Z"/>
+  <path fill="#e87722" d="M60 18 L98 34 V70 C98 86 80 98 60 102 C40 98 22 86 22 70 V34 Z"/>
+  <text x="60" y="68" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">VT</text>
+</svg>
